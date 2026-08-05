@@ -74,7 +74,8 @@ function App({ lang }: { lang: Lang }) {
               </React.Fragment>
             ))}
           </p>
-          <a href="https://ko-fi.com/ihafam" className="buy-btn" target="_blank" rel="noopener noreferrer">
+          {/* トップページは寄付（CUBICENGINE向け）の画面なので Shop に直接向ける */}
+          <a href="https://ko-fi.com/ihafam/shop" className="buy-btn" target="_blank" rel="noopener noreferrer">
             {t.hero.buyLabel}
           </a>
         </section>
