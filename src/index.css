@@ -31,6 +31,7 @@ body {
 header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 40px;
   background: rgba(21, 21, 21, 0.9);
   backdrop-filter: blur(10px);
@@ -48,6 +49,23 @@ header {
   height: 48px;
   width: auto;
 }
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+.lang-current { color: var(--primary-yellow); font-weight: 700; }
+.lang-separator { color: #444; }
+.lang-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.lang-link:hover { color: var(--text-main); }
 
 .hero {
   padding: 100px 20px;
@@ -149,6 +167,69 @@ header {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
+
+.about {
+  padding: 80px 20px;
+}
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-tagline {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-yellow);
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+.about-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+.about-body {
+  color: var(--text-muted);
+}
+
+.projects {
+  padding: 0 20px 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.project-card {
+  background: var(--bg-light);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-yellow);
+}
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary-yellow);
+}
+.project-card p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.project-link {
+  display: inline-block;
+  color: var(--primary-yellow);
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.project-link:hover { opacity: 0.7; }
 
 footer {
   text-align: center;
