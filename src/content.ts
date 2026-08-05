@@ -3,6 +3,7 @@ export type Lang = 'ja' | 'en';
 type SiteContent = {
   htmlLang: string;
   pageTitle: string;
+  homeHref: string;
   otherLangLabel: string;
   otherLangHref: string;
   currentLangLabel: string;
@@ -47,6 +48,7 @@ export const content: Record<Lang, SiteContent> = {
   ja: {
     htmlLang: 'ja',
     pageTitle: 'CUBICENGINE Studio — CMCUBE PRO',
+    homeHref: '/',
     otherLangLabel: 'EN',
     otherLangHref: '/en/',
     currentLangLabel: 'JP',
@@ -123,6 +125,7 @@ export const content: Record<Lang, SiteContent> = {
   en: {
     htmlLang: 'en',
     pageTitle: 'CUBICENGINE Studio — CMCUBE PRO',
+    homeHref: '/en/',
     otherLangLabel: 'JP',
     otherLangHref: '/',
     currentLangLabel: 'EN',

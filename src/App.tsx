@@ -8,7 +8,9 @@ function App({ lang }: { lang: Lang }) {
     <>
       <header>
         <div className="logo-container">
-          <img src="/logo.png" alt="CUBICENGINE Studio" className="official-logo" />
+          <a href={t.homeHref} className="logo-link" aria-label="CUBICENGINE Studio">
+            <img src="/logo.png" alt="CUBICENGINE Studio" className="official-logo" />
+          </a>
         </div>
         <div className="lang-switch">
           <span className="lang-current">{t.currentLangLabel}</span>
