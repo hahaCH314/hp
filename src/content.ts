@@ -95,6 +95,10 @@ export const content: Record<Lang, SiteContent> = {
           title: '3. ソフトウェアの著作権（EULA）',
           body: 'CMCUBEのプログラム、UI、デザイン、コードの著作権は CUBICENGINEstudio に帰属します。購入者によるソフトウェア本体の無断転載・再配布・リバースエンジニアリングは固く禁じます。本ソフトウェアの使用によって生じたいかなる損害についても、開発者は責任を負いかねます。使用許諾契約の全文はインストール時に表示されます。',
         },
+        {
+          title: '4. 利用上の注意（購入前にお読みください）',
+          body: '本ソフトウェアは画面をそのまま録画します。取り込んだウィンドウに映ったチャット、メール、通知、氏名などはすべて動画に残り、一度公開された動画は取り消せません。第三者の個人情報が映る画面を録画しないでください。ゲーム映像・動画・音楽・画像など第三者に権利のある素材については、利用の可否を各権利者の規約に従ってご判断ください。人物を撮影・録音する場合は本人の同意を得てください。他者を貶める目的、または誤解を与える目的でのご利用は固くお断りします。',
+        },
       ],
     },
     tokushoho: {
@@ -178,6 +182,10 @@ export const content: Record<Lang, SiteContent> = {
         {
           title: '3. Software copyright (EULA)',
           body: 'The program, UI, design and code of CMCUBE belong to CUBICENGINEstudio. Reuploading, redistributing or reverse engineering the software is strictly prohibited. The developer accepts no liability for any damages arising from its use. The full license agreement is shown during installation.',
+        },
+        {
+          title: '4. Responsible use (please read before buying)',
+          body: 'CMCUBE records your screen as it is. Anything visible in a captured window — chats, email, notifications, names — ends up in the video, and a video once published cannot be taken back. Do not record screens containing other people’s personal information. For game footage, video, music, images and other material owned by third parties, follow each rights holder’s terms when deciding whether you may use it. Get consent from anyone you film or record. Using CMCUBE to demean people or to mislead is strictly prohibited.',
         },
       ],
     },
