@@ -51,7 +51,7 @@ export const content: Record<Lang, SiteContent> = {
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
-      buyLabel: 'CMCUBE (¥500)',
+      buyLabel: 'CMCUBE (¥400)',
     },
     features: {
       accent: 'CORE',
@@ -106,7 +106,7 @@ export const content: Record<Lang, SiteContent> = {
         { label: '所在地', value: '【要記入】' },
         { label: '電話番号', value: '【要記入】' },
         { label: 'メールアドレス', value: '【要記入】' },
-        { label: '販売価格', value: '¥500（税込）' },
+        { label: '販売価格', value: '¥400（税込）' },
         { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
         { label: '支払方法', value: 'Ko-fi を通じたクレジットカード決済、または PayPal' },
         { label: '支払時期', value: 'ご注文時にお支払いが確定します。' },
@@ -135,7 +135,7 @@ export const content: Record<Lang, SiteContent> = {
         'Stop recording and an MP4 is waiting. No conversion, no editing.',
         'This studio makes the perfect live video ad a reality.',
       ],
-      buyLabel: 'CMCUBE (¥500)',
+      buyLabel: 'CMCUBE (¥400)',
     },
     features: {
       accent: 'CORE',
