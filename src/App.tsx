@@ -1,11 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { content, type Lang } from './content';
 
 function App({ lang }: { lang: Lang }) {
   const t = content[lang];
+  const [mangaTexts, setMangaTexts] = useState<{id: number, text: string, style: React.CSSProperties}[]>([]);
 
+  useEffect(() => {
+    const words = ['（えーーーーー）', '（うっそー）', '（wwwwww）', '（がーーーーーーーん）', '（まじ？）', '（草）', '（ドカーーーーーン）', '（ざわ…ざわ…）', '（ヤターーー）', '（キターーー）'];
+    const anims = ['hp-manga-left', 'hp-manga-right', 'hp-manga-down', 'hp-manga-up', 'hp-manga-diag1', 'hp-manga-diag2'];
+    const colors = ['var(--primary-pink)', '#00ffff', 'var(--text-main)', 'var(--text-muted)'];
+    
+    const interval = setInterval(() => {
+      const text = words[Math.floor(Math.random() * words.length)];
+      const animName = anims[Math.floor(Math.random() * anims.length)];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const fontSize = Math.floor(Math.random() * 80) + 40 + 'px';
+      
+      const id = Date.now() + Math.random();
+      const duration = Math.random() * 5 + 8; // 8 to 13 seconds
+
+      const newManga = {
+        id,
+        text,
+        style: {
+          color,
+          fontSize,
+          animation: `${animName} ${duration}s linear forwards`,
+          top: Math.random() * 90 + '%',
+          left: Math.random() * 90 + '%',
+        }
+      };
+      setMangaTexts(prev => [...prev, newManga]);
+
+      // Remove the element immediately after its animation finishes
+      setTimeout(() => {
+        setMangaTexts(prev => prev.filter(m => m.id !== id));
+      }, duration * 1000);
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <>
+      <div className="hp-manga-layer">
+        {mangaTexts.map(m => (
+          <div key={m.id} className="hp-manga-item" style={m.style}>{m.text}</div>
+        ))}
+      </div>
       <header>
         <div className="logo-container">
           <a href={t.homeHref} className="logo-link" aria-label="CUBICENGINE Studio">
@@ -24,7 +65,7 @@ function App({ lang }: { lang: Lang }) {
           <p className="product-name">{t.hero.productName}</p>
           <h1 style={{ fontFamily: "'Oswald', sans-serif", letterSpacing: '4px' }}>
             <span className="glitch-text">{t.hero.line1}</span><br/>
-            <span className="yellow">{t.hero.line2}</span>
+            <span className="pink">{t.hero.line2}</span>
           </h1>
           <p>
             {t.hero.lead.map((line, i) => (
@@ -33,14 +74,14 @@ function App({ lang }: { lang: Lang }) {
               </React.Fragment>
             ))}
           </p>
-          <a href="#buy" className="buy-btn">
+          <a href="#" className="buy-btn" onClick={(e) => { e.preventDefault(); alert("【デモ】Ko-fi のデジタル商品購入ページ（Ko-fi Shop）へ遷移します。"); }}>
             {t.hero.buyLabel}
           </a>
         </section>
 
         <section className="features">
           <h2 className="section-title">
-            <span className="glitch-text-yellow">{t.features.accent}</span>{t.features.rest}
+            <span className="glitch-text-pink">{t.features.accent}</span>{t.features.rest}
           </h2>
           <div className="feature-grid">
             {t.features.items.map((item) => (
@@ -55,7 +96,7 @@ function App({ lang }: { lang: Lang }) {
         <section className="legal" id="buy">
           <div className="legal-content">
             <h2 className="section-title">
-              <span className="glitch-text-yellow">{t.legal.accent}</span>{t.legal.rest}
+              <span className="glitch-text-pink">{t.legal.accent}</span>{t.legal.rest}
             </h2>
 
             {t.legal.boxes.map((box) => (

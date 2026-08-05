@@ -45,7 +45,7 @@ export const content: Record<Lang, SiteContent> = {
         '直感的なサウンド＆テロップ制御。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
-      buyLabel: 'CMCUBE (¥300)',
+      buyLabel: 'CMCUBE (¥500)',
     },
     features: {
       accent: 'CORE',
@@ -103,7 +103,7 @@ export const content: Record<Lang, SiteContent> = {
         'and intuitive sound & caption control.',
         'This studio makes the perfect live video ad a reality.',
       ],
-      buyLabel: 'CMCUBE (¥300)',
+      buyLabel: 'CMCUBE (¥500)',
     },
     features: {
       accent: 'CORE',
