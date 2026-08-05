@@ -108,6 +108,25 @@ function App({ lang }: { lang: Lang }) {
           </div>
         </section>
 
+        {t.tokushoho && (
+          <section className="legal tokushoho" id="tokushoho">
+            <div className="legal-content">
+              <h2 className="section-title">
+                <span className="glitch-text-pink">{t.tokushoho.accent}</span>{t.tokushoho.rest}
+              </h2>
+
+              <dl className="tokushoho-list">
+                {t.tokushoho.rows.map((row) => (
+                  <React.Fragment key={row.label}>
+                    <dt>{row.label}</dt>
+                    <dd>{row.value}</dd>
+                  </React.Fragment>
+                ))}
+              </dl>
+            </div>
+          </section>
+        )}
+
       </main>
 
       <footer>

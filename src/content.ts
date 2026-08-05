@@ -24,6 +24,12 @@ type SiteContent = {
     rest: string;
     boxes: { title: string; body: string }[];
   };
+  // 特定商取引法に基づく表記。日本の消費者向けの制度なので ja のみ持つ
+  tokushoho?: {
+    accent: string;
+    rest: string;
+    rows: { label: string; value: string }[];
+  };
   footer: string;
 };
 
@@ -71,16 +77,34 @@ export const content: Record<Lang, SiteContent> = {
       boxes: [
         {
           title: '1. 出力動画は【完全ロイヤリティフリー】',
-          body: '本ソフトウェア（CMCUBE）を使用してユーザー様が作成した動画・画像については、完全にユーザー様の権利となります。YouTube等での収益化、商用利用を含め、追加費用なし（ロイヤリティフリー）で自由に公開・利用していただけます。',
+          body: '本ソフトウェア（CMCUBE）を使用してユーザー様が作成した動画・画像については、完全にユーザー様の権利となります。YouTube等での収益化、商用利用を含め、追加費用なし（ロイヤリティフリー）で自由に公開・利用していただけます。なお、ユーザー様が読み込ませた音源・画像・Webページ等に第三者の権利がある場合、その権利処理はユーザー様の責任となります。',
         },
         {
-          title: '2. 完全ローカル処理（プライバシーの保護）',
-          body: 'カメラ映像、マイク音声、画面録画データはすべてユーザー様のPC内（ローカル）でのみ処理されます。CUBICENGINEstudioの外部サーバー等に映像や音声データが送信・保存されることは一切ありませんので、機密情報を含む配信でも安心してご利用いただけます。',
+          title: '2. 録画データは外部に送信しません',
+          body: 'カメラ映像、マイク音声、画面録画データはすべてユーザー様のPC内（ローカル）でのみ処理され、CUBICENGINEstudioのサーバーその他の外部サーバーに送信・保存されることは一切ありません。機密情報を含む配信でも安心してご利用いただけます。なお、画面表示用のWebフォントの取得と、ユーザー様が中央ステージに指定したURLへの接続は通常どおり発生します（いずれも録画データの送信ではありません）。',
         },
         {
           title: '3. ソフトウェアの著作権（EULA）',
-          body: 'CMCUBEのプログラム、UI、デザイン、コードの著作権は CUBICENGINEstudio に帰属します。購入者によるソフトウェア本体の無断転載・再配布・リバースエンジニアリングは固く禁じます。本ソフトウェアの使用によって生じたいかなる損害についても、開発者は責任を負いかねます。',
+          body: 'CMCUBEのプログラム、UI、デザイン、コードの著作権は CUBICENGINEstudio に帰属します。購入者によるソフトウェア本体の無断転載・再配布・リバースエンジニアリングは固く禁じます。本ソフトウェアの使用によって生じたいかなる損害についても、開発者は責任を負いかねます。使用許諾契約の全文はインストール時に表示されます。',
         },
+      ],
+    },
+    tokushoho: {
+      accent: '特定商取引法',
+      rest: 'に基づく表記',
+      rows: [
+        { label: '販売業者', value: 'CUBICENGINEstudio' },
+        { label: '運営責任者', value: '【要記入】' },
+        { label: '所在地', value: '【要記入】' },
+        { label: '電話番号', value: '【要記入】' },
+        { label: 'メールアドレス', value: '【要記入】' },
+        { label: '販売価格', value: '¥500（税込）' },
+        { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
+        { label: '支払方法', value: 'Ko-fi を通じたクレジットカード決済、または PayPal' },
+        { label: '支払時期', value: 'ご注文時にお支払いが確定します。' },
+        { label: '引渡時期', value: '決済完了後、ただちにダウンロードいただけます。' },
+        { label: '返品・キャンセル', value: 'デジタル商品の性質上、購入後の返品・返金はお受けできません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
+        { label: '動作環境', value: 'Windows 10 / 11（64bit）' },
       ],
     },
     footer: '© 2026 CUBICENGINEstudio. All rights reserved.',
@@ -129,15 +153,15 @@ export const content: Record<Lang, SiteContent> = {
       boxes: [
         {
           title: '1. Your output is fully royalty-free',
-          body: 'Videos and images you create with CMCUBE are entirely yours. Monetize them on YouTube, use them commercially — freely, and with no additional fees.',
+          body: 'Videos and images you create with CMCUBE are entirely yours. Monetize them on YouTube, use them commercially — freely, and with no additional fees. Where a third party holds rights in material you load into the app (audio, images, web pages), clearing those rights is your responsibility.',
         },
         {
-          title: '2. Fully local processing (privacy protected)',
-          body: 'Camera footage, microphone audio and screen recordings are processed only on your own PC. Nothing is ever transmitted to or stored on CUBICENGINEstudio servers, so you can use it safely even for confidential streams.',
+          title: '2. Your recordings are never sent anywhere',
+          body: 'Camera footage, microphone audio and screen recordings are processed only on your own PC, and are never transmitted to or stored on CUBICENGINEstudio servers or any other external server, so you can use it safely even for confidential streams. The app does fetch web fonts for display, and connects to whatever URL you point the central stage at — neither involves sending your recordings.',
         },
         {
           title: '3. Software copyright (EULA)',
-          body: 'The program, UI, design and code of CMCUBE belong to CUBICENGINEstudio. Reuploading, redistributing or reverse engineering the software is strictly prohibited. The developer accepts no liability for any damages arising from its use.',
+          body: 'The program, UI, design and code of CMCUBE belong to CUBICENGINEstudio. Reuploading, redistributing or reverse engineering the software is strictly prohibited. The developer accepts no liability for any damages arising from its use. The full license agreement is shown during installation.',
         },
       ],
     },
