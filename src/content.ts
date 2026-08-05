@@ -46,9 +46,9 @@ export const content: Record<Lang, SiteContent> = {
       line1: 'あとから編集無し！！！',
       line2: '録画のみの圧倒的ライブ感',
       lead: [
-        '編集に慣れているプロすら驚く、画期的な動画ライブ編集。',
-        '究極まで研ぎ澄まされたUI、16種のプレミアムフレーム、',
-        '直感的なサウンド＆テロップ制御。',
+        '起動して2クリック、もう録れる。シーンもソースも組まない。',
+        'ゲームを遊んでいる手を止めずに、テロップもVFXも叩き込める。',
+        '止めた瞬間、MP4 が出る。変換も編集もいらない。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
       buyLabel: 'CMCUBE (¥500)',
@@ -68,6 +68,14 @@ export const content: Record<Lang, SiteContent> = {
         {
           title: '🔠 ド派手なテロップ演出',
           body: 'ゴールド、ネオン、ホラーなど5種のテキストスタイルと、飛び出し・スライドなどのアニメーションを瞬時に発動。',
+        },
+        {
+          title: '🎮 遊びながら、演出する',
+          body: 'ゲームやアプリは別ウィンドウのまま取り込めます。CMCUBEにフォーカスが無くても Ctrl+Alt+キー でテロップ・効果音・VFXが発動するので、プレイする手を止めずに演出を重ねられます。実況の撮影が、ひとりで完結します。',
+        },
+        {
+          title: '🎬 出力はMP4。そのまま投稿',
+          body: 'H.264 + AAC のMP4で書き出します。YouTube、TikTok、Instagram、各種編集ソフトにそのまま渡せます。変換作業は要りません。',
         },
       ],
     },
@@ -122,9 +130,9 @@ export const content: Record<Lang, SiteContent> = {
       line1: 'NO POST-EDITING!!!',
       line2: 'Just record. Pure live energy.',
       lead: [
-        'Live video production that even seasoned editors find groundbreaking.',
-        'A razor-sharp UI, 16 premium frames,',
-        'and intuitive sound & caption control.',
+        'Two clicks from launch and you are rolling. No scenes, no sources to wire up.',
+        'Fire captions and VFX without taking your hands off the game.',
+        'Stop recording and an MP4 is waiting. No conversion, no editing.',
         'This studio makes the perfect live video ad a reality.',
       ],
       buyLabel: 'CMCUBE (¥500)',
@@ -144,6 +152,14 @@ export const content: Record<Lang, SiteContent> = {
         {
           title: '🔠 Bold Caption Effects',
           body: 'Five text styles including Gold, Neon and Horror, with pop-in, slide and other animations triggered on the spot.',
+        },
+        {
+          title: '🎮 Play and Produce at Once',
+          body: 'Capture your game or app from its own window. Ctrl+Alt shortcuts fire captions, sounds and VFX even when CMCUBE is not the focused window — so you never take your hands off the game. One person, one take.',
+        },
+        {
+          title: '🎬 MP4 Out, Ready to Post',
+          body: 'Recordings are written as H.264 + AAC MP4. Hand them straight to YouTube, TikTok, Instagram or your editor of choice. No conversion step.',
         },
       ],
     },
