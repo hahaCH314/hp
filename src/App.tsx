@@ -74,7 +74,7 @@ function App({ lang }: { lang: Lang }) {
               </React.Fragment>
             ))}
           </p>
-          <a href="#" className="buy-btn" onClick={(e) => { e.preventDefault(); alert("【デモ】Ko-fi のデジタル商品購入ページ（Ko-fi Shop）へ遷移します。"); }}>
+          <a href="https://ko-fi.com/ihafam" className="buy-btn" target="_blank" rel="noopener noreferrer">
             {t.hero.buyLabel}
           </a>
         </section>
