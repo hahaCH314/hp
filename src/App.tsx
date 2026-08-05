@@ -21,6 +21,7 @@ function App({ lang }: { lang: Lang }) {
 
       <main>
         <section className="hero">
+          <p className="product-name">{t.hero.productName}</p>
           <h1 style={{ fontFamily: "'Oswald', sans-serif", letterSpacing: '4px' }}>
             <span className="glitch-text">{t.hero.line1}</span><br/>
             <span className="yellow">{t.hero.line2}</span>
@@ -66,38 +67,6 @@ function App({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        <section className="about" id="about">
-          <div className="about-content">
-            <h2 className="section-title">
-              <span className="glitch-text-yellow">{t.about.accent}</span>{t.about.rest}
-            </h2>
-            <p className="about-tagline">{t.about.tagline}</p>
-            <h3>{t.about.heading}</h3>
-            <p className="about-body">{t.about.body}</p>
-          </div>
-        </section>
-
-        <section className="projects" id="projects">
-          <h2 className="section-title">
-            <span className="glitch-text-yellow">{t.projects.accent}</span>{t.projects.rest}
-          </h2>
-          <div className="project-grid">
-            {t.projects.items.map((project) => (
-              <div className="project-card" key={project.name}>
-                <h3>{project.icon} {project.name}</h3>
-                <p>{project.body}</p>
-                <a
-                  href={project.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-link"
-                >
-                  {project.linkLabel} ↗
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
       </main>
 
       <footer>

@@ -79,6 +79,17 @@ header {
   text-align: center;
   background: radial-gradient(circle at center, #2a2a20 0%, var(--bg-color) 70%);
 }
+.hero .product-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 12px;
+  line-height: 1.1;
+  color: var(--primary-yellow);
+  margin-bottom: 24px;
+  text-shadow: 3px 0 0 rgba(255, 100, 0, 0.8), -3px 0 0 rgba(255, 0, 0, 0.5);
+}
+
 .hero h1 {
   font-size: 4rem;
   font-weight: 900;
@@ -174,69 +185,6 @@ header {
   color: var(--text-muted);
   font-size: 0.95rem;
 }
-
-.about {
-  padding: 80px 20px;
-}
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-.about-tagline {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary-yellow);
-  letter-spacing: 2px;
-  margin-bottom: 30px;
-}
-.about-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-.about-body {
-  color: var(--text-muted);
-}
-
-.projects {
-  padding: 0 20px 80px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-.project-card {
-  background: var(--bg-light);
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid #333;
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-.project-card:hover {
-  transform: translateY(-10px);
-  border-color: var(--primary-yellow);
-}
-.project-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--primary-yellow);
-}
-.project-card p {
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-.project-link {
-  display: inline-block;
-  color: var(--primary-yellow);
-  font-weight: 700;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-.project-link:hover { opacity: 0.7; }
 
 footer {
   text-align: center;

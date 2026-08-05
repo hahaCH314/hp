@@ -8,6 +8,7 @@ type SiteContent = {
   otherLangHref: string;
   currentLangLabel: string;
   hero: {
+    productName: string;
     line1: string;
     line2: string;
     lead: string[];
@@ -23,37 +24,20 @@ type SiteContent = {
     rest: string;
     boxes: { title: string; body: string }[];
   };
-  about: {
-    accent: string;
-    rest: string;
-    heading: string;
-    tagline: string;
-    body: string;
-  };
-  projects: {
-    accent: string;
-    rest: string;
-    items: {
-      icon: string;
-      name: string;
-      body: string;
-      linkLabel: string;
-      href: string;
-    }[];
-  };
   footer: string;
 };
 
 export const content: Record<Lang, SiteContent> = {
   ja: {
     htmlLang: 'ja',
-    pageTitle: 'CUBICENGINE Studio — CMCUBE PRO',
+    pageTitle: 'CUBICENGINE Studio — CMCUBE',
     homeHref: '/',
     otherLangLabel: 'EN',
     otherLangHref: '/en/',
     currentLangLabel: 'JP',
     hero: {
-      line1: '編集なし',
+      productName: 'CMCUBE',
+      line1: 'あとから編集無し！！！',
       line2: '録画のみの圧倒的ライブ感',
       lead: [
         '編集に慣れているプロすら驚く、画期的な動画ライブ編集。',
@@ -61,7 +45,7 @@ export const content: Record<Lang, SiteContent> = {
         '直感的なサウンド＆テロップ制御。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
-      buyLabel: 'CMCUBE PRO (¥300)',
+      buyLabel: 'CMCUBE (¥300)',
     },
     features: {
       accent: 'CORE',
@@ -87,7 +71,7 @@ export const content: Record<Lang, SiteContent> = {
       boxes: [
         {
           title: '1. 出力動画は【完全ロイヤリティフリー】',
-          body: '本ソフトウェア（CMCUBE PRO）を使用してユーザー様が作成した動画・画像については、完全にユーザー様の権利となります。YouTube等での収益化、商用利用を含め、追加費用なし（ロイヤリティフリー）で自由に公開・利用していただけます。',
+          body: '本ソフトウェア（CMCUBE）を使用してユーザー様が作成した動画・画像については、完全にユーザー様の権利となります。YouTube等での収益化、商用利用を含め、追加費用なし（ロイヤリティフリー）で自由に公開・利用していただけます。',
         },
         {
           title: '2. 完全ローカル処理（プライバシーの保護）',
@@ -95,27 +79,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: '3. ソフトウェアの著作権（EULA）',
-          body: 'CMCUBE PROのプログラム、UI、デザイン、コードの著作権は CUBICENGINEstudio に帰属します。購入者によるソフトウェア本体の無断転載・再配布・リバースエンジニアリングは固く禁じます。本ソフトウェアの使用によって生じたいかなる損害についても、開発者は責任を負いかねます。',
-        },
-      ],
-    },
-    about: {
-      accent: 'ABOUT',
-      rest: ' US',
-      heading: '開発チーム',
-      tagline: 'もっと遊べ！もっと自由に！',
-      body: 'CubicEngine Studioは、クリエイターの自由な表現を支えるためのツールやプラットフォームを制作しているクリエイター集団です。',
-    },
-    projects: {
-      accent: 'OUR',
-      rest: ' PROJECTS',
-      items: [
-        {
-          icon: '🚀',
-          name: 'CUBICENGINE',
-          body: '直感的なUIでMinecraftのModやAddonを作成できるビジュアル開発スタジオ。コードを書かなくても、あなたのアイデアをすぐにゲーム内で動かすことができます。',
-          linkLabel: 'アプリを開く',
-          href: 'https://cubicengine.vercel.app',
+          body: 'CMCUBEのプログラム、UI、デザイン、コードの著作権は CUBICENGINEstudio に帰属します。購入者によるソフトウェア本体の無断転載・再配布・リバースエンジニアリングは固く禁じます。本ソフトウェアの使用によって生じたいかなる損害についても、開発者は責任を負いかねます。',
         },
       ],
     },
@@ -124,13 +88,14 @@ export const content: Record<Lang, SiteContent> = {
 
   en: {
     htmlLang: 'en',
-    pageTitle: 'CUBICENGINE Studio — CMCUBE PRO',
+    pageTitle: 'CUBICENGINE Studio — CMCUBE',
     homeHref: '/en/',
     otherLangLabel: 'JP',
     otherLangHref: '/',
     currentLangLabel: 'EN',
     hero: {
-      line1: 'NO EDITING',
+      productName: 'CMCUBE',
+      line1: 'NO POST-EDITING!!!',
       line2: 'Just record. Pure live energy.',
       lead: [
         'Live video production that even seasoned editors find groundbreaking.',
@@ -138,7 +103,7 @@ export const content: Record<Lang, SiteContent> = {
         'and intuitive sound & caption control.',
         'This studio makes the perfect live video ad a reality.',
       ],
-      buyLabel: 'CMCUBE PRO (¥300)',
+      buyLabel: 'CMCUBE (¥300)',
     },
     features: {
       accent: 'CORE',
@@ -164,7 +129,7 @@ export const content: Record<Lang, SiteContent> = {
       boxes: [
         {
           title: '1. Your output is fully royalty-free',
-          body: 'Videos and images you create with CMCUBE PRO are entirely yours. Monetize them on YouTube, use them commercially — freely, and with no additional fees.',
+          body: 'Videos and images you create with CMCUBE are entirely yours. Monetize them on YouTube, use them commercially — freely, and with no additional fees.',
         },
         {
           title: '2. Fully local processing (privacy protected)',
@@ -172,27 +137,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: '3. Software copyright (EULA)',
-          body: 'The program, UI, design and code of CMCUBE PRO belong to CUBICENGINEstudio. Reuploading, redistributing or reverse engineering the software is strictly prohibited. The developer accepts no liability for any damages arising from its use.',
-        },
-      ],
-    },
-    about: {
-      accent: 'ABOUT',
-      rest: ' US',
-      heading: 'Our Team',
-      tagline: 'Play More! Be Free!',
-      body: 'CubicEngine Studio is a collective of creators building tools and platforms to empower creators and support their free expression.',
-    },
-    projects: {
-      accent: 'OUR',
-      rest: ' PROJECTS',
-      items: [
-        {
-          icon: '🚀',
-          name: 'CUBICENGINE',
-          body: 'A visual development studio that lets you create Minecraft Mods and Addons with an intuitive UI. Bring your ideas to life in-game instantly, without writing a single line of code.',
-          linkLabel: 'Open App',
-          href: 'https://cubicengine.vercel.app',
+          body: 'The program, UI, design and code of CMCUBE belong to CUBICENGINEstudio. Reuploading, redistributing or reverse engineering the software is strictly prohibited. The developer accepts no liability for any damages arising from its use.',
         },
       ],
     },
