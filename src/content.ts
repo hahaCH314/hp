@@ -107,13 +107,16 @@ export const content: Record<Lang, SiteContent> = {
       rest: 'に基づく表記',
       rows: [
         { label: '販売業者', value: 'CUBICENGINEstudio' },
-        { label: '運営責任者', value: '【要記入】' },
-        { label: '所在地', value: '【要記入】' },
-        { label: '電話番号', value: '【要記入】' },
-        { label: 'メールアドレス', value: '【要記入】' },
+        { label: '運営責任者', value: '伊波 香菜子' },
+        { label: 'メールアドレス', value: 'syunpoo419@gmail.com' },
+
+        // 伏せずに全部出す、で本人と確認済み（2026-08-06）。
+        { label: '所在地', value: '〒904-1113 沖縄県うるま市石川山城1713-1' },
+        { label: '電話番号', value: '098-800-1637' },
+
         { label: '販売価格', value: '¥400（税込）' },
         { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
-        { label: '支払方法', value: 'Ko-fi を通じたクレジットカード決済、または PayPal' },
+        { label: '支払方法', value: 'BOOTH を通じたクレジットカード決済、コンビニ決済、その他 BOOTH が提供する決済方法' },
         { label: '支払時期', value: 'ご注文時にお支払いが確定します。' },
         { label: '引渡時期', value: '決済完了後、ただちにダウンロードいただけます。' },
         { label: '返品・キャンセル', value: 'デジタル商品の性質上、購入後の返品・返金はお受けできません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
