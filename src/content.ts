@@ -92,7 +92,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: '2. 録画データは外部に送信しません',
-          body: 'カメラ映像、マイク音声、画面録画データはすべてユーザー様のPC内（ローカル）でのみ処理され、CUBICENGINEstudioのサーバーその他の外部サーバーに送信・保存されることは一切ありません。機密情報を含む配信でも安心してご利用いただけます。なお、画面表示用のWebフォントの取得と、ユーザー様が中央ステージに指定したURLへの接続は通常どおり発生します（いずれも録画データの送信ではありません）。',
+          body: 'カメラ映像、マイク音声、画面録画データはすべてユーザー様のPC内（ローカル）でのみ処理され、CUBICENGINEstudioのサーバーその他の外部サーバーに送信・保存されることは一切ありません。録画したファイルはお使いのPCの「ビデオ」フォルダ内にのみ保存されます。機密情報を含む配信でも安心してご利用いただけます。なお、本ソフトウェアは画面表示用のWebフォントの取得と、起動時の更新確認（新しいバージョンの有無を製品サイトに問い合わせます）のために通信を行います。いずれも録画内容や利用状況を送信するものではありません。',
         },
         {
           title: '3. ソフトウェアの著作権（EULA）',
@@ -184,7 +184,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: '2. Your recordings are never sent anywhere',
-          body: 'Camera footage, microphone audio and screen recordings are processed only on your own PC, and are never transmitted to or stored on CUBICENGINEstudio servers or any other external server, so you can use it safely even for confidential streams. The app does fetch web fonts for display, and connects to whatever URL you point the central stage at — neither involves sending your recordings.',
+          body: 'Camera footage, microphone audio and screen recordings are processed only on your own PC, and are never transmitted to or stored on CUBICENGINEstudio servers or any other external server, so you can use it safely even for confidential streams. Recordings are written only to the Videos folder on your own machine. The app does reach the network for two things: fetching web fonts for display, and checking our product site at startup for a newer version. Neither sends your recordings or any usage data.',
         },
         {
           title: '3. Software copyright (EULA)',
