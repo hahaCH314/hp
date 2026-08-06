@@ -9,6 +9,8 @@ type SiteContent = {
   currentLangLabel: string;
   hero: {
     productName: string;
+    // ロゴのすぐ下に大きく出す一行。読ませる説明ではなく、誘い文句として置く
+    tagline: string;
     line1: string;
     line2: string;
     lead: string[];
@@ -43,6 +45,7 @@ export const content: Record<Lang, SiteContent> = {
     currentLangLabel: 'JP',
     hero: {
       productName: 'CMCUBE',
+      tagline: 'あなたも一発撮りに挑戦してみない？',
       line1: 'あとから編集無し！！！',
       line2: '録画のみの圧倒的ライブ感',
       lead: [
@@ -50,7 +53,6 @@ export const content: Record<Lang, SiteContent> = {
         'ゲームを遊んでいる手を止めずに、テロップもVFXも叩き込める。',
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
-        'あなたも一発撮りに挑戦してみない？',
       ],
       buyLabel: 'CMCUBE (¥400)',
     },
@@ -135,6 +137,7 @@ export const content: Record<Lang, SiteContent> = {
     currentLangLabel: 'EN',
     hero: {
       productName: 'CMCUBE',
+      tagline: 'Why not take on the one-take challenge?',
       line1: 'NO POST-EDITING!!!',
       line2: 'Just record. Pure live energy.',
       lead: [
@@ -142,7 +145,6 @@ export const content: Record<Lang, SiteContent> = {
         'Fire captions and VFX without taking your hands off the game.',
         'Stop recording and an MP4 is waiting. No conversion, no editing.',
         'This studio makes the perfect live video ad a reality.',
-        'Why not take on the one-take challenge?',
       ],
       buyLabel: 'CMCUBE (¥400)',
     },

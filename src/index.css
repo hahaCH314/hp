@@ -116,6 +116,18 @@ header {
   text-shadow: 3px 0 0 rgba(255, 0, 212, 0.8), -3px 0 0 rgba(0, 255, 255, 0.8);
 }
 
+/* ロゴ直下の誘い文句。.hero p に負けないよう .hero を前に付ける */
+.hero .hero-tagline {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-main);
+  max-width: none;
+  margin: -8px auto 32px auto;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.55);
+}
+
 .hero h1 {
   font-size: 4rem;
   font-weight: 900;

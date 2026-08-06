@@ -63,6 +63,8 @@ function App({ lang }: { lang: Lang }) {
       <main>
         <section className="hero">
           <p className="product-name">{t.hero.productName}</p>
+          {/* .hero p の詳細度が単一クラスより高いので、必ず .hero を前に付けて書く */}
+          <p className="hero-tagline">{t.hero.tagline}</p>
           <h1 style={{ fontFamily: "'Oswald', sans-serif", letterSpacing: '4px' }}>
             <span className="glitch-text">{t.hero.line1}</span><br/>
             <span className="pink">{t.hero.line2}</span>
