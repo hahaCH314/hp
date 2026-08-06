@@ -54,7 +54,7 @@ export const content: Record<Lang, SiteContent> = {
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
-      buyLabel: 'CMCUBE (¥500)',
+      buyLabel: '無料配布中（通常 ¥500）',
     },
     features: {
       accent: 'CORE',
@@ -116,7 +116,7 @@ export const content: Record<Lang, SiteContent> = {
         { label: '所在地', value: '〒904-1113 沖縄県うるま市石川山城1713-1' },
         { label: '電話番号', value: '098-800-1637' },
 
-        { label: '販売価格', value: '¥500（税込）' },
+        { label: '販売価格', value: '¥500（税込）※現在キャンペーンにより無料配布中' },
         { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
         { label: '支払方法', value: 'BOOTH を通じたクレジットカード決済、コンビニ決済、その他 BOOTH が提供する決済方法' },
         { label: '支払時期', value: 'ご注文時にお支払いが確定します。' },
@@ -146,7 +146,7 @@ export const content: Record<Lang, SiteContent> = {
         'Stop recording and an MP4 is waiting. No conversion, no editing.',
         'This studio makes the perfect live video ad a reality.',
       ],
-      buyLabel: 'CMCUBE (¥500)',
+      buyLabel: 'Free for a limited time (normally ¥500)',
     },
     features: {
       accent: 'CORE',
