@@ -122,7 +122,7 @@ export const content: Record<Lang, SiteContent> = {
         { label: '支払時期', value: 'ご注文時にお支払いが確定します。' },
         { label: '引渡時期', value: '決済完了後、ただちにダウンロードいただけます。' },
         { label: '返品・キャンセル', value: 'デジタル商品の性質上、購入後の返品・返金はお受けできません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
-        { label: '動作環境', value: 'Windows 10 / 11（64bit）' },
+        { label: '動作環境', value: 'Windows 10 / 11（64bit）。Windows 11 の「スマート アプリ コントロール」が有効な環境では、署名のないアプリとして起動が拒否されます（警告は表示されません）。該当する場合は Microsoft ストア版の公開をお待ちください。' },
       ],
     },
     footer: '© 2026 CUBICENGINEstudio. All rights reserved.',
