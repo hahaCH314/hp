@@ -3,7 +3,10 @@ export type Lang = 'ja' | 'en';
 type SiteContent = {
   htmlLang: string;
   pageTitle: string;
-  homeHref: string;
+  // ヘッダーのロゴ（logo.png = CUBICENGINEstudio のロゴ）のリンク先。
+  // 掲げているのが開発元のロゴなので、自サイトのトップではなく会社HPへ返す。
+  // ここが '/' だと押しても自分に戻るだけで、3サイトが繋がらない
+  studioHref: string;
   otherLangLabel: string;
   otherLangHref: string;
   currentLangLabel: string;
@@ -38,8 +41,8 @@ type SiteContent = {
 export const content: Record<Lang, SiteContent> = {
   ja: {
     htmlLang: 'ja',
-    pageTitle: 'CUBICENGINE Studio — CMCUBE',
-    homeHref: '/',
+    pageTitle: 'CUBICENGINEstudio — CMCUBE',
+    studioHref: 'https://cubicenginestudio.vercel.app/',
     otherLangLabel: 'EN',
     otherLangHref: '/en/',
     currentLangLabel: 'JP',
@@ -112,9 +115,24 @@ export const content: Record<Lang, SiteContent> = {
         { label: '運営責任者', value: '伊波 香菜子' },
         { label: 'メールアドレス', value: 'syunpoo419@gmail.com' },
 
-        // 伏せずに全部出す、で本人と確認済み（2026-08-06）。
-        { label: '所在地', value: '〒904-1113 沖縄県うるま市石川山城1713-1' },
-        { label: '電話番号', value: '098-800-1637' },
+        // 2026-08-06 は「伏せずに全部出す」で決めていたが、2026-08-07 に請求開示へ切り替えた。
+        // 所在地は個人の住所で、一度出すと検索に残る。他サイト側の配慮と揃わなくなるため出さない。
+        //
+        // 特商法は、通信販売の個人事業者が「請求があれば遅滞なく開示する」旨と開示方法を
+        // 明記していれば、広告上での住所・電話番号の記載を省略できる運用になっている。
+        // 条件は (1) 請求に遅滞なく応じられること (2) メール等の連絡先は必ず出すこと
+        // (3) 開示請求の方法を併記すること。下の文面はその3つを満たす形にしてある。
+        // ⚠️ この3つを崩す変更（メールアドレスを消す、開示方法を書かない等）を入れると
+        //    省略の根拠が無くなり、記載義務違反になる。実際の住所・電話番号は
+        //    ここには置かず、請求が来たら本人がメールで返す運用。
+        {
+          label: '所在地',
+          value: '請求があった場合は、遅滞なく開示いたします。上記のメールアドレス宛にご請求ください。',
+        },
+        {
+          label: '電話番号',
+          value: '請求があった場合は、遅滞なく開示いたします。上記のメールアドレス宛にご請求ください。',
+        },
 
         { label: '販売価格', value: '¥500（税込）※現在キャンペーンにより無料配布中' },
         { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
@@ -130,8 +148,9 @@ export const content: Record<Lang, SiteContent> = {
 
   en: {
     htmlLang: 'en',
-    pageTitle: 'CUBICENGINE Studio — CMCUBE',
-    homeHref: '/en/',
+    pageTitle: 'CUBICENGINEstudio — CMCUBE',
+    // 会社HPの英語版は /en（末尾スラッシュ無しのルート）
+    studioHref: 'https://cubicenginestudio.vercel.app/en',
     otherLangLabel: 'JP',
     otherLangHref: '/',
     currentLangLabel: 'EN',

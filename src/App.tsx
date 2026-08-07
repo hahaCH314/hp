@@ -49,8 +49,8 @@ function App({ lang }: { lang: Lang }) {
       </div>
       <header>
         <div className="logo-container">
-          <a href={t.homeHref} className="logo-link" aria-label="CUBICENGINE Studio">
-            <img src="/logo.png" alt="CUBICENGINE Studio" className="official-logo" />
+          <a href={t.studioHref} className="logo-link" aria-label="CUBICENGINEstudio">
+            <img src="/logo.png" alt="CUBICENGINEstudio" className="official-logo" />
           </a>
         </div>
         <div className="lang-switch">
