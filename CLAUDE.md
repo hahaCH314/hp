@@ -37,7 +37,11 @@ npm run lint
 記載義務は「購入者が容易に辿れる場所にあること」で満たせる。だから次の2つを壊してはいけない:
 
 - `App` のフッターにある `/tokushoho/` へのリンク（消すと辿れなくなる）
-- `tokushoho/index.html` の `robots` は `noindex, follow`。**`nofollow` や robots.txt での遮断はしない** — 検索に出さないことと辿れなくすることは別で、後者は義務違反になる
+- `tokushoho/index.html` の `robots` は `noindex, follow`。実名とメールアドレスが載るので検索結果には出さない。**`nofollow` や robots.txt での遮断はしない** — 検索に出さないことと辿れなくすることは別で、後者は義務違反になる
+
+`hreflang` はこのページには張らない（JA 専用で、対応する英語ページが無いため）。
+
+このページのHTMLに長い注釈を書かないこと。ソースを表示すれば誰でも読めてしまうので、判断の理由はこのファイル（CLAUDE.md）に置く。
 
 ## 販売
 
