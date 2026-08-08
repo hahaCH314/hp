@@ -87,6 +87,14 @@ export const content: Record<Lang, SiteContent> = {
           title: '🎬 出力はMP4。そのまま投稿',
           body: 'H.264 + AAC のMP4で書き出します。YouTube、TikTok、Instagram、各種編集ソフトにそのまま渡せます。変換作業は要りません。',
         },
+        {
+          title: '😳 配信の練習用にも',
+          body: 'ゲームのライブ配信やってみたいけど。。。ちょっと恥ずかしい人の練習用に',
+        },
+        {
+          title: '🎓 子供の安全な配信体験に',
+          body: '子供たちも遊びながら安全にライブ配信体験できる。PCの使い方（ショートカット機能覚えるなど）にも慣れ親御さんも嬉しい',
+        },
       ],
     },
     legal: {
@@ -199,6 +207,14 @@ export const content: Record<Lang, SiteContent> = {
         {
           title: '🎬 MP4 Out, Ready to Post',
           body: 'Recordings are written as H.264 + AAC MP4. Hand them straight to YouTube, TikTok, Instagram or your editor of choice. No conversion step.',
+        },
+        {
+          title: '😳 Perfect for Practice',
+          body: 'Want to try live streaming your gameplay but feeling a bit shy? This is the perfect tool to practice and build your confidence!',
+        },
+        {
+          title: '🎓 Safe Streaming for Kids',
+          body: 'Kids can enjoy a safe, simulated live streaming experience while playing. It’s a fun way to learn PC basics like keyboard shortcuts, giving parents peace of mind!',
         },
       ],
     },
