@@ -18,6 +18,9 @@ type SiteContent = {
     line2: string;
     lead: string[];
     buyLabel: string;
+    // 購入ボタンのリンク先。販売所が言語で違う（ja は BOOTH、en は Ko-fi）ので
+    // App にURLを直書きせず、文言と同じくここで言語ごとに持つ
+    buyHref: string;
   };
   features: {
     accent: string;
@@ -57,15 +60,16 @@ export const content: Record<Lang, SiteContent> = {
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
-      buyLabel: '無料配布中（通常 ¥500）',
+      buyLabel: '購入する（¥500）',
+      buyHref: 'https://cubicengine.booth.pm/items/8688761',
     },
     features: {
       accent: 'CORE',
       rest: ' FEATURES',
       items: [
         {
-          title: '🎨 16種の多様なフレーム',
-          body: 'モダン、サイバー、レトロCRT、グラスモーフィズム。各4つのバリエーションを備えた超高品質なフレーム群を1クリックで切り替え。',
+          title: '🎨 17種のプレミアム配信テーマ',
+          body: '高品質な背景アートと、それを引き立てる「静かな環境アニメーション」をセットにした17種のテーマを収録。1クリックで配信画面をプレミアムな空間に変えます。',
         },
         {
           title: '🎹 拡張サウンドボード',
@@ -77,7 +81,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: '🎮 遊びながら、演出する',
-          body: 'ゲームやアプリは別ウィンドウのまま取り込めます。CMCUBEにフォーカスが無くても Ctrl+Alt+キー でテロップ・効果音・VFXが発動するので、プレイする手を止めずに演出を重ねられます。実況の撮影が、ひとりで完結します。',
+          body: 'ゲームやアプリは別ウィンドウのまま取り込めます。CMCUBEにフォーカスが無くてもショートカットキーでテロップ・効果音・VFXが発動するので、プレイする手を止めずに演出を重ねられます。実況の撮影が、ひとりで完結します。',
         },
         {
           title: '🎬 出力はMP4。そのまま投稿',
@@ -134,7 +138,7 @@ export const content: Record<Lang, SiteContent> = {
           value: '請求があった場合は、遅滞なく開示いたします。上記のメールアドレス宛にご請求ください。',
         },
 
-        { label: '販売価格', value: '¥500（税込）※現在キャンペーンにより無料配布中' },
+        { label: '販売価格', value: '¥500（税込）' },
         { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
         { label: '支払方法', value: 'BOOTH を通じたクレジットカード決済、コンビニ決済、その他 BOOTH が提供する決済方法' },
         { label: '支払時期', value: 'ご注文時にお支払いが確定します。' },
@@ -165,15 +169,20 @@ export const content: Record<Lang, SiteContent> = {
         'Stop recording and an MP4 is waiting. No conversion, no editing.',
         'This studio makes the perfect live video ad a reality.',
       ],
-      buyLabel: 'Free for a limited time (normally ¥500)',
+      buyLabel: 'Buy Now ($5)',
+      // 英語版は Ko-fi で売る。BOOTH は決済も表示も日本語圏向けなので海外には向けない。
+      // 商品ページの直リンク。ショップタブ（/ihafam/shop）でもトップ（/ihafam）でもない。
+      // ⚠️ トップに向けてはいけない — あそこは製品 CUBICENGINE 向けの寄付画面で、
+      //    同じ Ko-fi アカウントに寄付と販売が同居している
+      buyHref: 'https://ko-fi.com/s/0d6f4f5342',
     },
     features: {
       accent: 'CORE',
       rest: ' FEATURES',
       items: [
         {
-          title: '🎨 16 Premium Frames',
-          body: 'Modern, Cyber, Retro CRT and Glassmorphism, with four variations each. Switch between 16 high-quality frames with a single click.',
+          title: '🎨 17 Premium Themes',
+          body: 'Pre-loaded with 17 stunning themes featuring high-quality background art paired with subtle, ambient animations. Switch the entire look of your stream with a single click.',
         },
         {
           title: '🎹 Expandable Soundboard',
@@ -185,7 +194,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: '🎮 Play and Produce at Once',
-          body: 'Capture your game or app from its own window. Ctrl+Alt shortcuts fire captions, sounds and VFX even when CMCUBE is not the focused window — so you never take your hands off the game. One person, one take.',
+          body: 'Capture your game or app from its own window. Keyboard shortcuts fire captions, sounds and VFX even when CMCUBE is not the focused window — so you never take your hands off the game. One person, one take.',
         },
         {
           title: '🎬 MP4 Out, Ready to Post',

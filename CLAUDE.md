@@ -28,6 +28,14 @@ npm run lint
 
 例外は `tokushoho`（特定商取引法に基づく表記）。**日本の消費者向けの制度なので ja だけが持つ**。型では optional にし、`App` 側は `{t.tokushoho && ...}` で出し分ける。他にも日本語版だけに要る文言が出たら同じ形にする。
 
+## 販売
+
+**販売所が言語で違う。** ja は BOOTH（¥500）、en は Ko-fi（$5）。BOOTH は決済も表示も日本語圏向けなので海外には向けない。だから購入ボタンのURLは `App` に直書きせず、文言と同じく `hero.buyHref` として言語ごとに `content.ts` が持つ。
+
+Ko-fi のリンク先は**商品ページの直リンク**（`ko-fi.com/s/xxxxxxxx`）。**トップ（`/ihafam`）に向けてはいけない** — あそこは寄付の画面で、寄付は CMCUBE ではなく製品 CUBICENGINE のもの。同じ Ko-fi アカウントに寄付と販売が同居している。
+
+`tokushoho` の「支払方法」は BOOTH を前提に書いてある。ja 専用なのでこれで整合する。
+
 ## 落とし穴
 
 - `<link rel="alternate" hreflang>` に `href="/"` を書くと Vite の build-html が **EISDIR で落ちる**。公開ドメインが決まって絶対URLにできるまで入れない
@@ -40,8 +48,5 @@ npm run lint
 
 ## 未着手
 
-- **特商法の表記に `【要記入】` が4つ残っている**（運営責任者・所在地・電話番号・メールアドレス）。**この状態で公開してはいけない**
-- 購入ボタン（¥400）は Ko-fi の **Shop タブ** `https://ko-fi.com/ihafam/shop` に繋いである。商品を作ったら商品ページ（`ko-fi.com/s/xxxxxxxx`）の直リンクに差し替える。**トップページ（`/ihafam`）に向けてはいけない** — あそこは寄付の画面で、寄付は CMCUBE ではなく製品 CUBICENGINE のもの。同じ Ko-fi アカウントに寄付と販売が同居している
 - `.legal` セクションの `id="buy"` は、購入ボタンが外部リンクになったので参照元がない
-- ヘッダーロゴは自分のトップに戻るだけ。会社HPのURLが決まったらそこへ繋ぐ
-- 未公開。URL未定
+- **公開中の Vercel が古い**（2026-08-08 時点）。`https://cmcubevercelapp.vercel.app/` が返す HTML は description が会社HPの文言のままで canonical/hreflang も入っておらず、直近のコミットが反映されていない

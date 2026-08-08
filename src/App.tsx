@@ -76,9 +76,8 @@ function App({ lang }: { lang: Lang }) {
               </React.Fragment>
             ))}
           </p>
-          {/* 販売は BOOTH。Ko-fi は寄付（CUBICENGINE向け）専用なので混ぜない。
-              商品ページができたら、ショップのトップではなく商品の直リンクに差し替える */}
-          <a href="https://cubicengine.booth.pm/items/8688761" className="buy-btn" target="_blank" rel="noopener noreferrer">
+          {/* 日本語版はBOOTH、英語版はKo-fiで販売する */}
+          <a href={t.hero.buyHref} className="buy-btn" target="_blank" rel="noopener noreferrer">
             {t.hero.buyLabel}
           </a>
         </section>
