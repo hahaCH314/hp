@@ -7,10 +7,12 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      // 日本語版 (/) と英語版 (/en/) を静的な2ページとして出力する
+      // 日本語版 (/)、英語版 (/en/)、特商法 (/tokushoho/) を静的なページとして出力する。
+      // 特商法は日本の制度なので ja 側にしか対応ページが無い（en/tokushoho は作らない）
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         en: resolve(import.meta.dirname, 'en/index.html'),
+        tokushoho: resolve(import.meta.dirname, 'tokushoho/index.html'),
       },
     },
   },

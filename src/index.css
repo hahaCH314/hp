@@ -267,6 +267,25 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid #333;
 }
+/* フッターから特商法ページへ。目立たせる必要はないが、購入者が辿れる程度には見える色にする */
+.footer-link {
+  color: var(--text-muted);
+  text-decoration: underline;
+}
+.footer-link:hover {
+  color: var(--primary-pink);
+}
+/* 特商法ページから製品ページに戻る導線 */
+.tokushoho-back {
+  margin-top: 24px;
+  font-size: 0.9rem;
+}
+.tokushoho-back a {
+  color: var(--text-muted);
+}
+.tokushoho-back a:hover {
+  color: var(--primary-pink);
+}
 
 /* Responsive Styles for Laptops and Tablets */
 @media (max-width: 1024px) {

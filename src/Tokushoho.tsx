@@ -42,8 +42,10 @@ function Tokushoho({ lang }: { lang: Lang }) {
               ))}
             </dl>
 
+            {/* 法定の表示だけ出して放り出さない。ここに辿り着いた人が
+                製品ページに戻れるよう、行き先が分かる文言にする */}
             <p className="tokushoho-back">
-              <a href="/">← {t.hero.productName}</a>
+              <a href="/">← {t.hero.productName} のページに戻る</a>
             </p>
           </div>
         </section>

@@ -111,29 +111,22 @@ function App({ lang }: { lang: Lang }) {
           </div>
         </section>
 
-        {t.tokushoho && (
-          <section className="legal tokushoho" id="tokushoho">
-            <div className="legal-content">
-              <h2 className="section-title">
-                <span className="glitch-text-pink">{t.tokushoho.accent}</span>{t.tokushoho.rest}
-              </h2>
-
-              <dl className="tokushoho-list">
-                {t.tokushoho.rows.map((row) => (
-                  <React.Fragment key={row.label}>
-                    <dt>{row.label}</dt>
-                    <dd>{row.value}</dd>
-                  </React.Fragment>
-                ))}
-              </dl>
-            </div>
-          </section>
-        )}
-
       </main>
 
+      {/* 特商法の中身は /tokushoho/ に切り出してある（実名とメールアドレスが載るので
+          製品を見に来ただけの人の目に必ず入る場所には置かない）。記載義務は
+          「購入者が容易に辿れること」で足りるので、フッターからのリンクで満たす。
+          ⚠️ このリンクを消すと辿れなくなり記載義務違反になる */}
       <footer>
         {t.footer}
+        {t.tokushoho && (
+          <>
+            {' '}
+            <a href="/tokushoho/" className="footer-link">
+              {t.tokushoho.accent}{t.tokushoho.rest}
+            </a>
+          </>
+        )}
       </footer>
     </>
   );

@@ -22,11 +22,22 @@ npm run lint
 
 ## 多言語
 
-**ルーターを入れていない。** Vite の複数エントリで `index.html` と `en/index.html` を静的に2ページ出し、`src/main.tsx` が `location.pathname.startsWith('/en')` を見て言語を決める。文言は `src/content.ts` に日英まとめてあり、`App` は `lang` prop を受け取るだけ。
+**ルーターを入れていない。** Vite の複数エントリで `index.html` / `en/index.html` / `tokushoho/index.html` を静的に3ページ出し、`src/main.tsx` が `location.pathname` を見て言語（`/en` 配下か）とページ（`/tokushoho` 配下か）を決める。文言は `src/content.ts` に日英まとめてあり、`App` は `lang` prop を受け取るだけ。
 
 新しい文言を足すときは `SiteContent` 型 → ja → en の順に3箇所。
 
-例外は `tokushoho`（特定商取引法に基づく表記）。**日本の消費者向けの制度なので ja だけが持つ**。型では optional にし、`App` 側は `{t.tokushoho && ...}` で出し分ける。他にも日本語版だけに要る文言が出たら同じ形にする。
+例外は `tokushoho`（特定商取引法に基づく表記）。**日本の消費者向けの制度なので ja だけが持つ**。型では optional にし、`{t.tokushoho && ...}` で出し分ける。他にも日本語版だけに要る文言が出たら同じ形にする。
+
+## 特商法ページ（触る前に読む）
+
+`/tokushoho/`（`src/Tokushoho.tsx`）。2026-08-08 にトップから切り出した。
+
+**運営責任者の実名とメールアドレスは特商法上どちらも省略できない。** 省略できるのは住所と電話番号だけで、それは「請求があれば遅滞なく開示」の形で既に使っている（`content.ts` の当該行のコメントに条件を書いてある）。消せない以上、せめて製品を見に来ただけの人の目に必ず入る場所には置かない、という判断でページを分けた。
+
+記載義務は「購入者が容易に辿れる場所にあること」で満たせる。だから次の2つを壊してはいけない:
+
+- `App` のフッターにある `/tokushoho/` へのリンク（消すと辿れなくなる）
+- `tokushoho/index.html` の `robots` は `noindex, follow`。**`nofollow` や robots.txt での遮断はしない** — 検索に出さないことと辿れなくすることは別で、後者は義務違反になる
 
 ## 販売
 
