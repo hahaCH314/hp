@@ -56,13 +56,17 @@ export const content: Record<Lang, SiteContent> = {
     hero: {
       productName: 'CMCUBE',
       tagline: 'あなたも一発撮りに挑戦してみない？',
-      line1: 'あとから編集無し！！！',
+      // 「あとから編集無し」は言い過ぎだった。CMCUBE が消せるのは装飾の編集
+      // （テロップ・効果音・VFX・枠）で、尺を切る作業や字幕は残る。
+      // 字幕を他所で付けた利用者がいて、約束と実態が食い違っていた（2026-08-09）。
+      // 強さは保ったまま、守れる約束だけを書く。
+      line1: '演出は、撮りながら終わる。',
       line2: '録画のみの圧倒的ライブ感',
       lead: [
         '起動して2クリック、もう録れる。シーンもソースも組まない。',
         'ゲームを遊んでいる手を止めずに、テロップもVFXも叩き込める。',
-        '止めた瞬間、MP4 が出る。変換も編集もいらない。',
-        '「完璧なライブ動画CM」を、このスタジオが実現する。',
+        '止めた瞬間、MP4 が出る。変換はいらない。飾りつけはもう終わっている。',
+        '切り出しや字幕を足したいときも、MP4 だからどの編集ソフトにもそのまま渡せる。',
       ],
       buyLabel: '購入する（¥500）',
       buyHref: 'https://cubicengine.booth.pm/items/8688761',
@@ -176,13 +180,13 @@ export const content: Record<Lang, SiteContent> = {
     hero: {
       productName: 'CMCUBE',
       tagline: 'Why not take on the one-take challenge?',
-      line1: 'NO POST-EDITING!!!',
+      line1: 'THE DECORATING IS ALREADY DONE',
       line2: 'Just record. Pure live energy.',
       lead: [
         'Two clicks from launch and you are rolling. No scenes, no sources to wire up.',
         'Fire captions and VFX without taking your hands off the game.',
-        'Stop recording and an MP4 is waiting. No conversion, no editing.',
-        'This studio makes the perfect live video ad a reality.',
+        'Stop recording and an MP4 is waiting. No conversion, and nothing left to decorate.',
+        'If you still want to trim it or add subtitles, it is an MP4 — every editor takes it as is.',
       ],
       buyLabel: 'Buy Now ($5)',
       // 英語版は Ko-fi で売る。BOOTH は決済も表示も日本語圏向けなので海外には向けない。
