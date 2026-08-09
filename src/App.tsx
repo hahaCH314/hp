@@ -141,6 +141,12 @@ function App({ lang }: { lang: Lang }) {
             TikTok
           </a>
           <span className="footer-social-sep">/</span>
+          {/* ⚠️ ハンドルが X の自動割り当てのまま。他は cubicenginestudio で揃っているので
+              ここだけ別人のアカウントに見える。X 側で変えたらこのURLも直すこと */}
+          <a href="https://x.com/1iAbESbtIskJG4E" target="_blank" rel="noopener noreferrer" className="footer-link">
+            X
+          </a>
+          <span className="footer-social-sep">/</span>
           <a href="https://www.youtube.com/channel/UCLFDpyaWesF8TiuYBD5B49w" target="_blank" rel="noopener noreferrer" className="footer-link">
             YouTube
           </a>
