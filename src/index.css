@@ -288,6 +288,18 @@ footer {
 .footer-link:hover {
   color: var(--primary-pink);
 }
+/* SNS。特商法リンクと同じ行に混ぜると法定の導線が埋もれるので行を分ける */
+.footer-social {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+.footer-social-sep {
+  color: #444;
+}
 /* 特商法ページから製品ページに戻る導線 */
 .tokushoho-back {
   margin-top: 24px;

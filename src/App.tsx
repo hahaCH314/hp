@@ -130,6 +130,21 @@ function App({ lang }: { lang: Lang }) {
             </a>
           </>
         )}
+        {/* SNSはURLも表示名も言語で変わらないので content.ts には置かない。
+            共有リンクに付く ?igsh= や ?_t= は追跡用パラメータなので外してある */}
+        <div className="footer-social">
+          <a href="https://www.instagram.com/cubicenginestudio/" target="_blank" rel="noopener noreferrer" className="footer-link">
+            Instagram
+          </a>
+          <span className="footer-social-sep">/</span>
+          <a href="https://www.tiktok.com/@cubicenginestudio" target="_blank" rel="noopener noreferrer" className="footer-link">
+            TikTok
+          </a>
+          <span className="footer-social-sep">/</span>
+          <a href="https://www.youtube.com/channel/UCLFDpyaWesF8TiuYBD5B49w" target="_blank" rel="noopener noreferrer" className="footer-link">
+            YouTube
+          </a>
+        </div>
       </footer>
     </>
   );
