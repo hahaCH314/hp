@@ -162,6 +162,19 @@ header {
   box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
 }
 
+/* 動作環境。購入ボタンの真下に出す。
+   ⚠️ .hero p の詳細度が単一クラスより高いので、必ず .hero を前に付ける
+   （付けないと font-size がヒーローの本文サイズに戻される） */
+.hero .hero-requirement {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted, #9aa0aa);
+  /* 目立たせすぎず、しかし読み飛ばされない程度に。
+     買う前に気づいてもらうための文なので薄くしすぎない */
+  opacity: 0.9;
+}
+
 .section-title {
   text-align: center;
   font-size: 2.5rem;

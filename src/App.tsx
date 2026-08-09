@@ -80,6 +80,9 @@ function App({ lang }: { lang: Lang }) {
           <a href={t.hero.buyHref} className="buy-btn" target="_blank" rel="noopener noreferrer">
             {t.hero.buyLabel}
           </a>
+          {/* 動作環境はボタンの真下に置く。買ってから動かないと分かっても
+              返金できないので、押す前に必ず目に入る位置でなければ意味がない */}
+          <p className="hero-requirement">{t.hero.requirement}</p>
         </section>
 
         <section className="features">

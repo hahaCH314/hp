@@ -21,6 +21,10 @@ type SiteContent = {
     // 購入ボタンのリンク先。販売所が言語で違う（ja は BOOTH、en は Ko-fi）ので
     // App にURLを直書きせず、文言と同じくここで言語ごとに持つ
     buyHref: string;
+    // 動作環境。買ってから動かないと分かっても返金できないので、
+    // 購入ボタンの真下に置いて、押す前に必ず目に入るようにする。
+    // ⚠️ スマホから見ている人が一番危ない（この製品はWindows専用）
+    requirement: string;
   };
   features: {
     accent: string;
@@ -62,6 +66,7 @@ export const content: Record<Lang, SiteContent> = {
       ],
       buyLabel: '購入する（¥500）',
       buyHref: 'https://cubicengine.booth.pm/items/8688761',
+      requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
     },
     features: {
       accent: 'CORE',
@@ -185,6 +190,7 @@ export const content: Record<Lang, SiteContent> = {
       // ⚠️ トップに向けてはいけない — あそこは製品 CUBICENGINE 向けの寄付画面で、
       //    同じ Ko-fi アカウントに寄付と販売が同居している
       buyHref: 'https://ko-fi.com/s/0d6f4f5342',
+      requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
     },
     features: {
       accent: 'CORE',
