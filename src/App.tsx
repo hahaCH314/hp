@@ -89,6 +89,12 @@ function App({ lang }: { lang: Lang }) {
             {t.hero.phoneNote}{' '}
             <a href={t.hero.phoneHref} target="_blank" rel="noopener noreferrer">{t.hero.phoneLabel} →</a>
           </p>
+
+          <div style={{ marginTop: '24px' }}>
+            <a href="https://discord.gg/wVnyfnv7d" className="discord-hp-btn" target="_blank" rel="noopener noreferrer">
+              👾 公式Discordコミュニティに参加する！
+            </a>
+          </div>
         </section>
 
         <section className="features">
@@ -139,6 +145,10 @@ function App({ lang }: { lang: Lang }) {
         {/* SNSはURLも表示名も言語で変わらないので content.ts には置かない。
             共有リンクに付く ?igsh= や ?_t= は追跡用パラメータなので外してある */}
         <div className="footer-social">
+          <a href="https://discord.gg/wVnyfnv7d" target="_blank" rel="noopener noreferrer" className="footer-link" style={{ color: '#5865F2', fontWeight: 'bold' }}>
+            Discord
+          </a>
+          <span className="footer-social-sep">/</span>
           <a href="https://www.instagram.com/cubicenginestudio/" target="_blank" rel="noopener noreferrer" className="footer-link">
             Instagram
           </a>

@@ -162,6 +162,24 @@ header {
   box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
 }
 
+/* 公式Discordへの誘導バナー */
+.discord-hp-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #5865F2, #4752c4);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(88, 101, 242, 0.4);
+  transition: all 0.2s ease;
+}
+.discord-hp-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(88, 101, 242, 0.6);
+}
+
 /* 動作環境。購入ボタンの真下に出す。
    ⚠️ .hero p の詳細度が単一クラスより高いので、必ず .hero を前に付ける
    （付けないと font-size がヒーローの本文サイズに戻される） */
