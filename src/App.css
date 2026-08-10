@@ -182,3 +182,17 @@
     border-right-color: var(--border);
   }
 }
+
+/* スマホで来た人の行き先。Windows 専用の注記のすぐ下に置く */
+.hero-phone {
+  margin-top: 8px;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+.hero-phone a {
+  color: #22d3ee;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(34, 211, 238, 0.5);
+}

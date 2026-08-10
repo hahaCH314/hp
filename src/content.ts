@@ -25,6 +25,11 @@ type SiteContent = {
     // 購入ボタンの真下に置いて、押す前に必ず目に入るようにする。
     // ⚠️ スマホから見ている人が一番危ない（この製品はWindows専用）
     requirement: string;
+    /** スマホの人の行き先。CMCUBE は Windows 専用なので、ここで取りこぼさない
+        （2026-08-10、「製品どうしは直リンクしない」約束を見直した） */
+    phoneNote: string;
+    phoneLabel: string;
+    phoneHref: string;
   };
   features: {
     accent: string;
@@ -72,6 +77,9 @@ export const content: Record<Lang, SiteContent> = {
       buyLabel: '購入する（¥500）',
       buyHref: 'https://cubicengine.booth.pm/items/8688761',
       requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
+      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せる、無料のアプリがあります。',
+      phoneLabel: 'tinyCUBE を開く（無料・スマホ用）',
+      phoneHref: 'https://tinycube.vercel.app',
     },
     features: {
       accent: 'CORE',
@@ -196,6 +204,9 @@ export const content: Record<Lang, SiteContent> = {
       //    同じ Ko-fi アカウントに寄付と販売が同居している
       buyHref: 'https://ko-fi.com/s/0d6f4f5342',
       requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
+      phoneNote: 'On a phone? There is a free app that lays your voice and effects over a video you already shot, in one take.',
+      phoneLabel: 'Open tinyCUBE (free, for phones)',
+      phoneHref: 'https://tinycube.vercel.app',
     },
     features: {
       accent: 'CORE',

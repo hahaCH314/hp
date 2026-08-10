@@ -83,6 +83,12 @@ function App({ lang }: { lang: Lang }) {
           {/* 動作環境はボタンの真下に置く。買ってから動かないと分かっても
               返金できないので、押す前に必ず目に入る位置でなければ意味がない */}
           <p className="hero-requirement">{t.hero.requirement}</p>
+          {/* Windows 専用なので、スマホで来た人はここで行き止まりになる。
+              無料のスマホ版へ渡す（2026-08-10） */}
+          <p className="hero-phone">
+            {t.hero.phoneNote}{' '}
+            <a href={t.hero.phoneHref} target="_blank" rel="noopener noreferrer">{t.hero.phoneLabel} →</a>
+          </p>
         </section>
 
         <section className="features">
