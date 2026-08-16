@@ -74,7 +74,10 @@ export const content: Record<Lang, SiteContent> = {
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
-      buyLabel: '購入する（¥500）',
+      // 2026-08-16、無料にした（伊波さん「これからの CUBICENGINEstudio の
+      // CM としてどちらも無料へ」）。売り物ではなくスタジオを知ってもらう
+      // ためのものにする。tinyCUBE を全部無料にしたのと同じ判断
+      buyLabel: '無料でダウンロード',
       buyHref: 'https://cubicengine.booth.pm/items/8688761',
       requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
       phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せる、無料のアプリがあります。',
@@ -166,12 +169,14 @@ export const content: Record<Lang, SiteContent> = {
           value: '請求があった場合は、遅滞なく開示いたします。上記のメールアドレス宛にご請求ください。',
         },
 
-        { label: '販売価格', value: '¥500（税込）' },
+        // ⚠️ **無料でも特商法の記載は残すこと。** 事業者の連絡先や引渡時期は
+        //    有償・無償にかかわらず求められる
+        { label: '販売価格', value: '無料' },
         { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
-        { label: '支払方法', value: 'BOOTH を通じたクレジットカード決済、コンビニ決済、その他 BOOTH が提供する決済方法' },
-        { label: '支払時期', value: 'ご注文時にお支払いが確定します。' },
+        { label: '支払方法', value: '無料のため、お支払いは発生しません。' },
+        { label: '支払時期', value: '無料のため、お支払いは発生しません。' },
         { label: '引渡時期', value: '決済完了後、ただちにダウンロードいただけます。' },
-        { label: '返品・キャンセル', value: 'デジタル商品の性質上、購入後の返品・返金はお受けできません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
+        { label: '返品・キャンセル', value: '無料のため、返品・返金は発生しません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
         { label: '動作環境', value: 'Windows 10 / 11（64bit）。Windows 11 の「スマート アプリ コントロール」が有効な環境では、署名のないアプリとして起動が拒否されます（警告は表示されません）。該当する場合は Microsoft ストア版の公開をお待ちください。' },
       ],
     },
@@ -197,7 +202,7 @@ export const content: Record<Lang, SiteContent> = {
         'Stop recording and an MP4 is waiting. No conversion, no editing.',
         'This studio makes the perfect live video ad a reality.',
       ],
-      buyLabel: 'Buy Now ($5)',
+      buyLabel: 'Download Free',
       // 英語版は Ko-fi で売る。BOOTH は決済も表示も日本語圏向けなので海外には向けない。
       // 商品ページの直リンク。ショップタブ（/ihafam/shop）でもトップ（/ihafam）でもない。
       // ⚠️ トップに向けてはいけない — あそこは製品 CUBICENGINE 向けの寄付画面で、
