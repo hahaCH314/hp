@@ -211,7 +211,9 @@ header {
 }
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* min() が無いと、画面幅が 300px を下回ったときにカードが 300px のまま
+     残って横スクロールが出る。min(300px, 100%) で画面幅まで降りられるようにする */
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 30px;
 }
 .feature-card {
@@ -365,9 +367,71 @@ footer {
   .buy-btn {
     font-size: 1.2rem;
     padding: 12px 32px;
+    /* 指で押す領域は 44px 以上ないと押し間違える */
+    min-height: 44px;
   }
   .feature-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .feature-card,
+  .legal-box {
+    /* 30px の内側余白は、狭い画面だと文字の幅を削りすぎる */
+    padding: 20px;
+  }
+  .hero .hero-tagline {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .discord-hp-btn {
+    min-height: 44px;
+  }
+}
+
+/* いちばん狭い端末（iPhone SE 幅 375px 以下） */
+@media (max-width: 400px) {
+  header {
+    padding: 12px 14px;
+  }
+  .official-logo {
+    height: 36px;
+  }
+  .hero,
+  .features,
+  .legal {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+  .hero .product-name {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  .buy-btn {
+    /* 横並びに収まらないので、画面幅いっぱいのボタンにする */
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+  }
+}
+
+/* タッチ操作の端末では hover を効かせない。
+   タップした後もカードが浮いたまま戻らなくなるため */
+@media (hover: none) {
+  .feature-card:hover,
+  .buy-btn:hover,
+  .discord-hp-btn:hover {
+    transform: none;
+  }
+}
+
+/* 走る男の子は装飾。狭い画面では本文にかぶるうえ、
+   動きを減らす設定の人には負担になるので出さない */
+@media (max-width: 480px), (prefers-reduced-motion: reduce) {
+  .running-boy-container {
+    display: none;
   }
 }
 
