@@ -148,7 +148,7 @@ export const content: Record<Lang, SiteContent> = {
       rows: [
         { label: '販売業者', value: 'CUBICENGINEstudio' },
         { label: '運営責任者', value: '伊波 香菜子' },
-        { label: 'メールアドレス', value: 'syunpoo419@gmail.com' },
+        { label: 'メールアドレス', value: 'cubicenginestudio@icloud.com' },
 
         // 2026-08-06 は「伏せずに全部出す」で決めていたが、2026-08-07 に請求開示へ切り替えた。
         // 所在地は個人の住所で、一度出すと検索に残る。他サイト側の配慮と揃わなくなるため出さない。
