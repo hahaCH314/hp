@@ -4,6 +4,7 @@ import { content, type Lang } from './content';
 function App({ lang }: { lang: Lang }) {
   const t = content[lang];
   const [mangaTexts, setMangaTexts] = useState<{id: number, text: string, style: React.CSSProperties}[]>([]);
+  const [boyAnim, setBoyAnim] = useState({ id: 0, animClass: 'run-dash' });
 
   useEffect(() => {
     const words = ['（えーーーーー）', '（うっそー）', '（wwwwww）', '（がーーーーーーーん）', '（まじ？）', '（草）', '（ドカーーーーーン）', '（ざわ…ざわ…）', '（ヤターーー）', '（キターーー）'];
@@ -40,12 +41,39 @@ function App({ lang }: { lang: Lang }) {
 
     return () => clearInterval(interval);
   }, []);
+
+  // 多動な男の子のアニメーション切り替え
+  useEffect(() => {
+    // 5つの動き（普通のダッシュ、こける、落ちる、空から降る、覗き込む）
+    const boyAnims = ['run-dash', 'run-trip', 'run-fall', 'run-drop', 'run-peek'];
+    
+    // 5秒ごとに次のランダムな動きを抽選して再描画する
+    const boyInterval = setInterval(() => {
+      setBoyAnim({
+        id: Date.now(),
+        animClass: boyAnims[Math.floor(Math.random() * boyAnims.length)]
+      });
+    }, 5500); 
+
+    return () => clearInterval(boyInterval);
+  }, []);
+
   return (
     <>
       <div className="hp-manga-layer">
         {mangaTexts.map(m => (
           <div key={m.id} className="hp-manga-item" style={m.style}>{m.text}</div>
         ))}
+      </div>
+
+      {/* 走る男の子（多動！） */}
+      <div className="running-boy-container">
+        {/* key を変えることで、毎回新しく要素が作られてアニメーションが最初から再生される */}
+        <div key={boyAnim.id} className={`running-boy ${boyAnim.animClass}`}>
+          {/* 伊波さんの作成した画像を public/ フォルダに入れ、ここを以下のように img タグに変更してください */}
+          {/* <img src="/running-boy.gif" alt="走る男の子" style={{ height: '80px' }} /> */}
+          🏃‍♂️💨
+        </div>
       </div>
       <header>
         <div className="logo-container">

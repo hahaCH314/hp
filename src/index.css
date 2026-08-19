@@ -370,3 +370,78 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* 走る男の子のアニメーション */
+.running-boy-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  pointer-events: none; /* クリックの邪魔にならないように */
+  z-index: 60; /* 漫画テキストのレイヤーより手前に */
+  overflow: hidden;
+}
+
+.running-boy {
+  position: absolute;
+  bottom: 10px;
+  /* 画像に差し替える場合は height などでサイズ調整してください */
+  font-size: 60px; 
+  line-height: 1;
+}
+
+/* アニメーションクラス */
+.run-dash { animation: run-dash 4s linear forwards; }
+.run-trip { animation: run-trip 5s linear forwards; }
+.run-fall { animation: run-fall 4s linear forwards; }
+.run-drop { animation: run-drop 4s linear forwards; }
+.run-peek { animation: run-peek 5s linear forwards; }
+
+/* 普通の猛ダッシュ */
+@keyframes run-dash {
+  0% { transform: translate(-150px, 0); }
+  100% { transform: translate(100vw, 0); }
+}
+
+/* こける */
+@keyframes run-trip {
+  0% { transform: translate(-150px, 0) rotate(0deg); }
+  40% { transform: translate(40vw, 0) rotate(0deg); }
+  45% { transform: translate(45vw, 0) rotate(90deg); }
+  55% { transform: translate(50vw, 0) rotate(90deg); }
+  60% { transform: translate(50vw, 0) rotate(0deg); }
+  100% { transform: translate(100vw, 0) rotate(0deg); }
+}
+
+/* 落ちる（穴に落ちるように画面外へ） */
+@keyframes run-fall {
+  0% { transform: translate(-150px, 0) rotate(0deg); }
+  45% { transform: translate(45vw, 0) rotate(0deg); }
+  /* スコンッと落ちる */
+  50% { transform: translate(48vw, 150px) rotate(180deg); opacity: 1; }
+  51% { opacity: 0; }
+  100% { transform: translate(48vw, 150px); opacity: 0; }
+}
+
+/* 降ってくる（空から落ちてきて走り出す） */
+@keyframes run-drop {
+  0% { transform: translate(10vw, -100vh) rotate(360deg); }
+  20% { transform: translate(10vw, 0) rotate(0deg); }
+  25% { transform: translate(10vw, 0) scaleY(0.5); }
+  30% { transform: translate(10vw, 0) scaleY(1); }
+  100% { transform: translate(100vw, 0); }
+}
+
+/* 左からひょっこり覗き込んでからダッシュする */
+@keyframes run-peek {
+  0% { transform: translate(-150px, 0) rotate(0deg); }
+  /* ちょっと顔を出す */
+  10% { transform: translate(-30px, 0) rotate(20deg); }
+  /* キョロキョロ様子見 */
+  20% { transform: translate(-30px, 0) rotate(15deg); }
+  30% { transform: translate(-30px, 0) rotate(25deg); }
+  35% { transform: translate(-30px, 0) rotate(0deg); }
+  /* ダッシュ！ */
+  100% { transform: translate(100vw, 0); }
+}
