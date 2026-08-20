@@ -80,8 +80,11 @@ export const content: Record<Lang, SiteContent> = {
       buyLabel: '無料でダウンロード',
       buyHref: 'https://cubicengine.booth.pm/items/8688761',
       requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
-      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せる、無料のアプリがあります。',
-      phoneLabel: 'tinyCUBE を開く（無料・スマホ用）',
+      // ⚠️ **「無料」と言い切らないこと**（2026-08-21）。tinyCUBE には
+      //    ¥300 の買い切り（フレーム53枚＋透かし消し）がある。遊ぶだけなら
+      //    お金はかからないので「無料ではじめられる」と書く
+      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せるアプリがあります。無料ではじめられます。',
+      phoneLabel: 'tinyCUBE を開く（スマホ用）',
       phoneHref: 'https://tinycube.vercel.app',
     },
     features: {
@@ -209,8 +212,9 @@ export const content: Record<Lang, SiteContent> = {
       //    同じ Ko-fi アカウントに寄付と販売が同居している
       buyHref: 'https://ko-fi.com/s/0d6f4f5342',
       requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
-      phoneNote: 'On a phone? There is a free app that lays your voice and effects over a video you already shot, in one take.',
-      phoneLabel: 'Open tinyCUBE (free, for phones)',
+      // ⚠️ 日本語版と同じ理由で「free」と言い切らない（¥300 の買い切りがある）
+      phoneNote: 'On a phone? There is an app that lays your voice and effects over a video you already shot, in one take. Free to start.',
+      phoneLabel: 'Open tinyCUBE (for phones)',
       phoneHref: 'https://tinycube.vercel.app',
     },
     features: {
