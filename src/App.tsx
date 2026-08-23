@@ -6,6 +6,34 @@ function App({ lang }: { lang: Lang }) {
   const [mangaTexts, setMangaTexts] = useState<{id: number, text: string, style: React.CSSProperties}[]>([]);
   const [boyAnim, setBoyAnim] = useState({ id: 0, animClass: 'run-dash' });
 
+  /**
+   * ダウンロードが始まったことを知らせる（2026-08-23、伊波さん
+   * 「何回も押しちゃう」）。
+   *
+   * ⚠️ **押しても画面が変わらないので、始まったことが分からない。**
+   *    実際、伊波さんの手元に同じファイルが8個たまった。
+   *    ブラウザはダウンロードを右上の小さな印でしか知らせないので、
+   *    ここで言葉にして出す。
+   *
+   * ⚠️ **ボタンは止めないこと。** 落ちてこなかった人が
+   *    もう一度押せなくなる。押せるまま、知らせだけ出す
+   */
+  const [started, setStarted] = useState(false);
+
+  /**
+   * ⚠️ **進み具合（何％）は出せない。**（2026-08-23、伊波さん
+   *    「ダウンロード中とかないの？」に対して調べた結果）
+   *
+   *    ％を出すには fetch で自分で受け取る必要があるが、GitHub は
+   *    別サイトで CORS を許していないため、ブラウザに弾かれる。
+   *    自分のサイト経由（Vercel の関数）にすれば通るが、208MB を
+   *    毎回中継することになり、無料枠の帯域（100GB/月）を
+   *    500回ほどで使い切る。**人が増えたときに落ちるほうが困る。**
+   *
+   *    知らせの一行と、ブラウザ自身のダウンロード表示があれば
+   *    「何度も押す」は防げる。目的はそちらなので、これで足りる
+   */
+
   useEffect(() => {
     const words = ['（えーーーーー）', '（うっそー）', '（wwwwww）', '（がーーーーーーーん）', '（まじ？）', '（草）', '（ドカーーーーーン）', '（ざわ…ざわ…）', '（ヤターーー）', '（キターーー）'];
     const anims = ['hp-manga-left', 'hp-manga-right', 'hp-manga-down', 'hp-manga-up', 'hp-manga-diag1', 'hp-manga-diag2'];
@@ -113,9 +141,10 @@ function App({ lang }: { lang: Lang }) {
               ファイルには効かず、ブラウザによっては**リンクごと無効になる**
               （2026-08-23、伊波さん「まだできなかった」「ダウンロード」）。
               GitHub 側が filename を指定して返すので、付けなくても保存される */}
-          <a href={t.hero.buyHref} className="buy-btn">
+          <a href={t.hero.buyHref} className="buy-btn" onClick={() => setStarted(true)}>
             {t.hero.buyLabel}
           </a>
+          {started && <p className="dl-started">{t.hero.startedNote}</p>}
           {/* 動作環境はボタンの真下に置く。買ってから動かないと分かっても
               返金できないので、押す前に必ず目に入る位置でなければ意味がない */}
           <p className="hero-requirement">{t.hero.requirement}</p>

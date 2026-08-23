@@ -162,6 +162,15 @@ header {
   box-shadow: 0 15px 40px rgba(139, 92, 246, 0.6);
 }
 
+/* 押したあとの知らせ（2026-08-23、伊波さん「何回も押しちゃう」）。
+   ⚠️ **押しても画面が変わらないと、始まったことが分からず何度も押される。**
+      実際に同じファイルが8個たまった */
+.dl-started {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
 /* 公式Discordへの誘導バナー */
 .discord-hp-btn {
   display: inline-block;

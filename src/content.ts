@@ -35,6 +35,9 @@ type SiteContent = {
      *    ここを直さなくてよい。**上げるときにファイル名をそろえること。**
      */
     buyHref: string;
+    /** 押したあとに出す知らせ。**押しても画面が変わらないので、
+        始まったことが分からず何度も押してしまう**（2026-08-23） */
+    startedNote: string;
     // 動作環境。買ってから動かないと分かっても返金できないので、
     // 購入ボタンの真下に置いて、押す前に必ず目に入るようにする。
     // ⚠️ スマホから見ている人が一番危ない（この製品はWindows専用）
@@ -93,6 +96,7 @@ export const content: Record<Lang, SiteContent> = {
       //    ダウンロード自体は無料なので「無料でダウンロード」までは正しい
       buyLabel: '無料でダウンロード',
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
+      startedNote: 'ダウンロードしています。そのままお待ちください（208MB）。',
       requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
       // ⚠️ **「無料」と言い切らないこと**（2026-08-21）。tinyCUBE には
       //    ¥300 の買い切り（フレーム53枚＋透かし消し）がある。遊ぶだけなら
@@ -227,6 +231,7 @@ export const content: Record<Lang, SiteContent> = {
       //    売り場を経由する理由がなくなった。売り場は言語で分ける必要が
       //    あったが、ファイルを直接渡すなら1つで足りる
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
+      startedNote: 'Downloading. Please wait (208MB).',
       requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
       // ⚠️ 日本語版と同じ理由で「free」と言い切らない（¥300 の買い切りがある）
       phoneNote: 'On a phone? There is an app that lays your voice and effects over a video you already shot, in one take. Free to start.',
