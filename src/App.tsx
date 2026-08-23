@@ -109,8 +109,11 @@ function App({ lang }: { lang: Lang }) {
               飛ばしていた。
               target="_blank" を外したのは、ダウンロードが始まるだけなのに
               空のタブが残ると「何も起きなかった」ように見えるため。
-              download 属性を付けて、ブラウザに「これは保存するもの」と伝える */}
-          <a href={t.hero.buyHref} className="buy-btn" download>
+              ⚠️ **download 属性を付けてはいけない。** 別サイト（GitHub）の
+              ファイルには効かず、ブラウザによっては**リンクごと無効になる**
+              （2026-08-23、伊波さん「まだできなかった」「ダウンロード」）。
+              GitHub 側が filename を指定して返すので、付けなくても保存される */}
+          <a href={t.hero.buyHref} className="buy-btn">
             {t.hero.buyLabel}
           </a>
           {/* 動作環境はボタンの真下に置く。買ってから動かないと分かっても
