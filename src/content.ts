@@ -18,8 +18,22 @@ type SiteContent = {
     line2: string;
     lead: string[];
     buyLabel: string;
-    // 購入ボタンのリンク先。販売所が言語で違う（ja は BOOTH、en は Ko-fi）ので
-    // App にURLを直書きせず、文言と同じくここで言語ごとに持つ
+    /**
+     * ダウンロードボタンのリンク先。
+     *
+     * ⚠️ **押したらそのままファイルが落ちる直リンクにすること**（2026-08-23、
+     *    伊波さん「BOOTHって馴染みがなさすぎて。。。」「直接ダウンロードが
+     *    １番いいと思う」）。
+     *
+     *    前は BOOTH（日本語）と Ko-fi（英語）へ飛ばしていた。有料で売って
+     *    いたころの名残で、無料にしたあとも売り場を経由させていた。
+     *    ゲーム配信をしたい人にとって BOOTH は馴染みが薄く、知らないサイトへ
+     *    飛ばされると、そこで止まってしまう。
+     *
+     * ⚠️ **URL にバージョンを入れないこと。** `latest` と固定のファイル名
+     *    （CMCUBE-Setup.exe）で受けているので、新しい版を出しても
+     *    ここを直さなくてよい。**上げるときにファイル名をそろえること。**
+     */
     buyHref: string;
     // 動作環境。買ってから動かないと分かっても返金できないので、
     // 購入ボタンの真下に置いて、押す前に必ず目に入るようにする。
@@ -78,7 +92,7 @@ export const content: Record<Lang, SiteContent> = {
       //    無料と読んで入った人が課金画面に当たるのが一番不信を招く。
       //    ダウンロード自体は無料なので「無料でダウンロード」までは正しい
       buyLabel: '無料でダウンロード',
-      buyHref: 'https://cubicengine.booth.pm/items/8688761',
+      buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
       requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
       // ⚠️ **「無料」と言い切らないこと**（2026-08-21）。tinyCUBE には
       //    ¥300 の買い切り（フレーム53枚＋透かし消し）がある。遊ぶだけなら
@@ -208,11 +222,11 @@ export const content: Record<Lang, SiteContent> = {
         'This studio makes the perfect live video ad a reality.',
       ],
       buyLabel: 'Download Free',
-      // 英語版は Ko-fi で売る。BOOTH は決済も表示も日本語圏向けなので海外には向けない。
-      // 商品ページの直リンク。ショップタブ（/ihafam/shop）でもトップ（/ihafam）でもない。
-      // ⚠️ トップに向けてはいけない — あそこは製品 CUBICENGINE 向けの寄付画面で、
-      //    同じ Ko-fi アカウントに寄付と販売が同居している
-      buyHref: 'https://ko-fi.com/s/0d6f4f5342',
+      // ⚠️ **日本語版と同じ直リンクにした**（2026-08-23）。
+      //    前は Ko-fi の商品ページへ飛ばしていたが、無料にしたので
+      //    売り場を経由する理由がなくなった。売り場は言語で分ける必要が
+      //    あったが、ファイルを直接渡すなら1つで足りる
+      buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
       requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
       // ⚠️ 日本語版と同じ理由で「free」と言い切らない（¥300 の買い切りがある）
       phoneNote: 'On a phone? There is an app that lays your voice and effects over a video you already shot, in one take. Free to start.',

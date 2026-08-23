@@ -104,8 +104,13 @@ function App({ lang }: { lang: Lang }) {
               </React.Fragment>
             ))}
           </p>
-          {/* 日本語版はBOOTH、英語版はKo-fiで販売する */}
-          <a href={t.hero.buyHref} className="buy-btn" target="_blank" rel="noopener noreferrer">
+          {/* ⚠️ **押すとそのままファイルが落ちる**（2026-08-23、伊波さん
+              「直接ダウンロードが１番いいと思う」）。前は BOOTH / Ko-fi へ
+              飛ばしていた。
+              target="_blank" を外したのは、ダウンロードが始まるだけなのに
+              空のタブが残ると「何も起きなかった」ように見えるため。
+              download 属性を付けて、ブラウザに「これは保存するもの」と伝える */}
+          <a href={t.hero.buyHref} className="buy-btn" download>
             {t.hero.buyLabel}
           </a>
           {/* 動作環境はボタンの真下に置く。買ってから動かないと分かっても
