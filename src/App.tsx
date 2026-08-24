@@ -150,9 +150,17 @@ function App({ lang }: { lang: Lang }) {
           <p className="hero-requirement">{t.hero.requirement}</p>
           {/* Windows 専用なので、スマホで来た人はここで行き止まりになる。
               無料のスマホ版へ渡す（2026-08-10） */}
+          {/* 行き先が無いときはリンクを出さない。href を空のまま出すと
+              押せてしまい、ページが再読み込みされるだけで行き止まりになる
+              （tinyCUBE がストア審査中の間はこの状態） */}
           <p className="hero-phone">
-            {t.hero.phoneNote}{' '}
-            <a href={t.hero.phoneHref} target="_blank" rel="noopener noreferrer">{t.hero.phoneLabel} →</a>
+            {t.hero.phoneNote}
+            {t.hero.phoneHref && (
+              <>
+                {' '}
+                <a href={t.hero.phoneHref} target="_blank" rel="noopener noreferrer">{t.hero.phoneLabel} →</a>
+              </>
+            )}
           </p>
 
           <div style={{ marginTop: '24px' }}>

@@ -45,8 +45,11 @@ type SiteContent = {
     /** スマホの人の行き先。CMCUBE は Windows 専用なので、ここで取りこぼさない
         （2026-08-10、「製品どうしは直リンクしない」約束を見直した） */
     phoneNote: string;
-    phoneLabel: string;
-    phoneHref: string;
+    /** 行き先が無いときは省く。tinyCUBE がストア審査中で、
+        リンクを出すと押した人が行き止まりになる（2026-08-24）。
+        公開されたら App Store / Google Play のURLを入れて戻す */
+    phoneLabel?: string;
+    phoneHref?: string;
   };
   features: {
     accent: string;
@@ -101,9 +104,9 @@ export const content: Record<Lang, SiteContent> = {
       // ⚠️ **「無料」と言い切らないこと**（2026-08-21）。tinyCUBE には
       //    ¥300 の買い切り（フレーム53枚＋透かし消し）がある。遊ぶだけなら
       //    お金はかからないので「無料ではじめられる」と書く
-      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せるアプリがあります。無料ではじめられます。',
-      phoneLabel: 'tinyCUBE を開く（スマホ用）',
-      phoneHref: 'https://tinycube.vercel.app',
+      // ⚠️ tinyCUBE はストア審査中。まだ誰も使えないので、行けると読める
+      //    文言とリンクを出さないこと。公開されたら戻す
+      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せるスマホ用アプリ tinyCUBE を、App Store と Google Play で公開準備中です。',
     },
     features: {
       accent: 'CORE',
@@ -234,9 +237,8 @@ export const content: Record<Lang, SiteContent> = {
       startedNote: 'Downloading. Please wait (208MB).',
       requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
       // ⚠️ 日本語版と同じ理由で「free」と言い切らない（¥300 の買い切りがある）
-      phoneNote: 'On a phone? There is an app that lays your voice and effects over a video you already shot, in one take. Free to start.',
-      phoneLabel: 'Open tinyCUBE (for phones)',
-      phoneHref: 'https://tinycube.vercel.app',
+      // ⚠️ 理由は ja 側のコメント参照
+      phoneNote: 'On a phone? tinyCUBE lays your voice and effects over a video you already shot, in one take. Coming soon to the App Store and Google Play.',
     },
     features: {
       accent: 'CORE',

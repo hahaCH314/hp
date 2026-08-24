@@ -77,9 +77,11 @@ header {
 }
 .logo-link:hover { opacity: 0.75; }
 .official-logo {
-  height: 48px;
+  height: 64px;
   width: auto;
   display: block;
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
 }
 
 .lang-switch {
@@ -406,7 +408,7 @@ footer {
     padding: 12px 14px;
   }
   .official-logo {
-    height: 36px;
+    height: 48px;
   }
   .hero,
   .features,
