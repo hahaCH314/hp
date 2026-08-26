@@ -45,9 +45,9 @@ type SiteContent = {
     /** スマホの人の行き先。CMCUBE は Windows 専用なので、ここで取りこぼさない
         （2026-08-10、「製品どうしは直リンクしない」約束を見直した） */
     phoneNote: string;
-    /** 行き先が無いときは省く。tinyCUBE がストア審査中で、
-        リンクを出すと押した人が行き止まりになる（2026-08-24）。
-        公開されたら App Store / Google Play のURLを入れて戻す */
+    /** 行き先が無いときは省ける。ストア審査中など、リンクを出すと
+        押した人が行き止まりになる期間に使う。
+        Google Play はまだ公開待ちなので、また使う場面がある */
     phoneLabel?: string;
     phoneHref?: string;
   };
@@ -94,20 +94,19 @@ export const content: Record<Lang, SiteContent> = {
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
-      // ⚠️ 「完全無料」と言い切らないこと。本体は無料だがアプリ内課金がある。
-      //    無料と読んで入った人が課金画面に当たるのが一番不信を招く。
-      //    ダウンロード自体は無料なので「無料でダウンロード」までは正しい
+      // 2026-08-24 時点、CMCUBE に有料のものは無い。
+      // ⚠️ 有料の要素を足したときは、ここと特商法の価格欄を必ず一緒に直すこと
       buyLabel: '無料でダウンロード',
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
       startedNote: 'ダウンロードしています。そのままお待ちください（208MB）。',
       requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
-      // ⚠️ **「無料」と言い切らないこと**（2026-08-21）。tinyCUBE には
-      //    ¥300 の買い切り（フレーム53枚＋透かし消し）がある。遊ぶだけなら
-      //    お金はかからないので「無料ではじめられる」と書く
-      // ⚠️ tinyCUBE が公開されたのでリンクを出した
+      // tinyCUBE は App Store で公開済み。CMCUBE は Windows 専用なので、
+      // スマホで来た人をここで渡す。
+      // ⚠️ URLに国コード（/jp/）を入れないこと。海外の人が開くと
+      //    「国が違う」という警告が出て、そこで止まってしまう
       phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せるスマホ用アプリ tinyCUBE が App Store で公開されました！',
       phoneLabel: 'App Store で見る',
-      phoneHref: 'https://apps.apple.com/jp/app/tinycube-%E3%83%97%E3%83%AA%E3%82%AF%E3%83%A9%E3%82%AB%E3%83%A1%E3%83%A9/id6803792204',
+      phoneHref: 'https://apps.apple.com/app/id6803792204',
     },
     features: {
       accent: 'CORE',
@@ -196,14 +195,15 @@ export const content: Record<Lang, SiteContent> = {
 
         // ⚠️ **無料でも特商法の記載は残すこと。** 事業者の連絡先や引渡時期は
         //    有償・無償にかかわらず求められる。
-        // ⚠️ アプリ内課金がある以上「無料」「支払いは発生しません」と
-        //    書き切らないこと。実態と食い違う表示になる
-        { label: '販売価格', value: 'アプリ本体：無料。アプリ内で追加コンテンツを有料で提供する場合があります（価格はアプリ内に表示します）。' },
+        // 2026-08-24 時点、CMCUBE に有料のものは無い。
+        // ⚠️ 有料の要素を足したときは、この4行（販売価格・支払方法・支払時期・
+        //    返品）を必ず一緒に直すこと。法定の表示なので実態とずれてはいけない
+        { label: '販売価格', value: '無料' },
         { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
-        { label: '支払方法', value: 'アプリ本体のダウンロードにお支払いは発生しません。アプリ内で有料コンテンツをご購入いただく場合は、当該画面に表示する決済方法によります。' },
-        { label: '支払時期', value: 'アプリ内で有料コンテンツをご購入いただく場合、ご注文時にお支払いが確定します。' },
+        { label: '支払方法', value: '無料のため、お支払いは発生しません。' },
+        { label: '支払時期', value: '無料のため、お支払いは発生しません。' },
         { label: '引渡時期', value: '決済完了後、ただちにダウンロードいただけます。' },
-        { label: '返品・キャンセル', value: 'アプリ本体は無料のため返金は発生しません。アプリ内でご購入いただいた有料コンテンツは、デジタル商品の性質上、購入後の返品・返金はお受けできません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
+        { label: '返品・キャンセル', value: '無料のため、返品・返金は発生しません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
         { label: '動作環境', value: 'Windows 10 / 11（64bit）。Windows 11 の「スマート アプリ コントロール」が有効な環境では、署名のないアプリとして起動が拒否されます（警告は表示されません）。該当する場合は Microsoft ストア版の公開をお待ちください。' },
       ],
     },
@@ -241,7 +241,7 @@ export const content: Record<Lang, SiteContent> = {
       // ⚠️ 理由は ja 側のコメント参照
       phoneNote: 'On a phone? tinyCUBE lays your voice and effects over a video you already shot, in one take. Now available on the App Store!',
       phoneLabel: 'View on App Store',
-      phoneHref: 'https://apps.apple.com/jp/app/tinycube-%E3%83%97%E3%83%AA%E3%82%AF%E3%83%A9%E3%82%AB%E3%83%A1%E3%83%A9/id6803792204',
+      phoneHref: 'https://apps.apple.com/app/id6803792204',
     },
     features: {
       accent: 'CORE',
