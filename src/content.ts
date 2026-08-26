@@ -104,9 +104,10 @@ export const content: Record<Lang, SiteContent> = {
       // ⚠️ **「無料」と言い切らないこと**（2026-08-21）。tinyCUBE には
       //    ¥300 の買い切り（フレーム53枚＋透かし消し）がある。遊ぶだけなら
       //    お金はかからないので「無料ではじめられる」と書く
-      // ⚠️ tinyCUBE はストア審査中。まだ誰も使えないので、行けると読める
-      //    文言とリンクを出さないこと。公開されたら戻す
-      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せるスマホ用アプリ tinyCUBE を、App Store と Google Play で公開準備中です。',
+      // ⚠️ tinyCUBE が公開されたのでリンクを出した
+      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せるスマホ用アプリ tinyCUBE が App Store で公開されました！',
+      phoneLabel: 'App Store で見る',
+      phoneHref: 'https://apps.apple.com/jp/app/tinycube-%E3%83%97%E3%83%AA%E3%82%AF%E3%83%A9%E3%82%AB%E3%83%A1%E3%83%A9/id6803792204',
     },
     features: {
       accent: 'CORE',
@@ -238,7 +239,9 @@ export const content: Record<Lang, SiteContent> = {
       requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
       // ⚠️ 日本語版と同じ理由で「free」と言い切らない（¥300 の買い切りがある）
       // ⚠️ 理由は ja 側のコメント参照
-      phoneNote: 'On a phone? tinyCUBE lays your voice and effects over a video you already shot, in one take. Coming soon to the App Store and Google Play.',
+      phoneNote: 'On a phone? tinyCUBE lays your voice and effects over a video you already shot, in one take. Now available on the App Store!',
+      phoneLabel: 'View on App Store',
+      phoneHref: 'https://apps.apple.com/jp/app/tinycube-%E3%83%97%E3%83%AA%E3%82%AF%E3%83%A9%E3%82%AB%E3%83%A1%E3%83%A9/id6803792204',
     },
     features: {
       accent: 'CORE',

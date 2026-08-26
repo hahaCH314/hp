@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { content, type Lang } from './content';
+import Fireworks from './Fireworks';
 
 function App({ lang }: { lang: Lang }) {
   const t = content[lang];
@@ -88,6 +89,12 @@ function App({ lang }: { lang: Lang }) {
 
   return (
     <>
+      {/* お祝いの花火（2026-08-26、ヒマワリからの手紙）。
+          App Store の審査が通り、174か国に並んだ日。
+          ⚠️ **8/26 いっぱいで自分で止まる。** 消すときはこの1行と
+             src/Fireworks.tsx を外すだけでよい（ほかに手を入れていない） */}
+      <Fireworks />
+
       <div className="hp-manga-layer">
         {mangaTexts.map(m => (
           <div key={m.id} className="hp-manga-item" style={m.style}>{m.text}</div>
