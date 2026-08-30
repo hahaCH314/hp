@@ -38,6 +38,11 @@ type SiteContent = {
     /** 押したあとに出す知らせ。**押しても画面が変わらないので、
         始まったことが分からず何度も押してしまう**（2026-08-23） */
     startedNote: string;
+    /** 落とした exe の開き方（2026-08-27）。署名がないので
+        「WindowsによってPCが保護されました」に全員が当たる */
+    openTitle: string;
+    openSteps: string[];
+    openNote: string;
     // 動作環境。買ってから動かないと分かっても返金できないので、
     // 購入ボタンの真下に置いて、押す前に必ず目に入るようにする。
     // ⚠️ スマホから見ている人が一番危ない（この製品はWindows専用）
@@ -99,6 +104,13 @@ export const content: Record<Lang, SiteContent> = {
       buyLabel: '無料でダウンロード',
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
       startedNote: 'ダウンロードしています。そのままお待ちください（208MB）。',
+      openTitle: '青い画面が出たときの開きかた',
+      openSteps: [
+        'ダウンロードしたファイルをダブルクリックします',
+        '「Windows によって PC が保護されました」と出たら、青い文字の「詳細情報」を押します',
+        '下に出てくる「実行」を押します',
+      ],
+      openNote: 'このお知らせは、アプリに開発元の証明書を付けていないために出るものです。中身に問題があるという意味ではありません。証明書は年間の費用がかかるため、まだ付けていません。',
       requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
       // tinyCUBE は App Store で公開済み。CMCUBE は Windows 専用なので、
       // スマホで来た人をここで渡す。
@@ -236,6 +248,13 @@ export const content: Record<Lang, SiteContent> = {
       //    あったが、ファイルを直接渡すなら1つで足りる
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
       startedNote: 'Downloading. Please wait (208MB).',
+      openTitle: 'If you see a blue warning screen',
+      openSteps: [
+        'Double-click the downloaded file',
+        'When "Windows protected your PC" appears, click the blue "More info" link',
+        'Click "Run anyway"',
+      ],
+      openNote: 'This notice appears because the app is not code-signed. It does not mean anything is wrong with the app. Signing certificates carry a yearly cost, so we have not purchased one yet.',
       requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
       // ⚠️ 日本語版と同じ理由で「free」と言い切らない（¥300 の買い切りがある）
       // ⚠️ 理由は ja 側のコメント参照

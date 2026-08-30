@@ -151,7 +151,25 @@ function App({ lang }: { lang: Lang }) {
           <a href={t.hero.buyHref} className="buy-btn" onClick={() => setStarted(true)}>
             {t.hero.buyLabel}
           </a>
-          {started && <p className="dl-started">{t.hero.startedNote}</p>}
+          {started && (
+            <>
+              <p className="dl-started">{t.hero.startedNote}</p>
+              {/* ⚠️ **開き方を必ず出すこと**（2026-08-27、伊波さん
+                  「downloadして開けなかった」）。落とした人は全員
+                  「WindowsによってPCが保護されました」に当たる。
+                  署名のない exe なので出るもので、危険という意味ではない。
+                  ここに書いておかないと、そこで閉じてしまう。
+                  ⚠️ **押す前ではなく、押したあとに出す。** 落とす前に
+                     警告の話をすると、かえって不安にさせる */}
+              <div className="dl-howto">
+                <p className="dl-howto-title">{t.hero.openTitle}</p>
+                <ol className="dl-howto-steps">
+                  {t.hero.openSteps.map((line, i) => <li key={i}>{line}</li>)}
+                </ol>
+                <p className="dl-howto-note">{t.hero.openNote}</p>
+              </div>
+            </>
+          )}
           {/* 動作環境はボタンの真下に置く。買ってから動かないと分かっても
               返金できないので、押す前に必ず目に入る位置でなければ意味がない */}
           <p className="hero-requirement">{t.hero.requirement}</p>

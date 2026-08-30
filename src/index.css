@@ -520,3 +520,35 @@ footer {
   /* ダッシュ！ */
   100% { transform: translate(100vw, 0); }
 }
+
+/* 落とした exe の開きかた（2026-08-27、伊波さん「downloadして開けなかった」）。
+   ⚠️ **落とした人は全員 SmartScreen に当たる。** 署名のない exe なので
+      出るもので、危険という意味ではない。ここが無いとそこで閉じてしまう */
+.dl-howto {
+  max-width: 520px;
+  margin: 14px auto 0;
+  padding: 16px 18px;
+  text-align: left;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.dl-howto-title {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.dl-howto-steps {
+  margin: 0;
+  padding-left: 1.3em;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text-main);
+}
+.dl-howto-note {
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
