@@ -42,12 +42,17 @@ type SiteContent = {
         「WindowsによってPCが保護されました」に全員が当たる */
     openTitle: string;
     openSteps: string[];
+    /** Mac 版。2026-09-02 に追加。公証済みなので「開きかた」は要らない */
+    buyLabelMac: string;
+    buyHrefMac: string;
+    startedNoteMac: string;
     openNote: string;
     // 動作環境。買ってから動かないと分かっても返金できないので、
     // 購入ボタンの真下に置いて、押す前に必ず目に入るようにする。
-    // ⚠️ スマホから見ている人が一番危ない（この製品はWindows専用）
+    // ⚠️ スマホから見ている人が一番危ない（この製品はパソコン専用。
+    //    2026-09-02 に Mac でも動くようになった。スマホ非対応は変わらない）
     requirement: string;
-    /** スマホの人の行き先。CMCUBE は Windows 専用なので、ここで取りこぼさない
+    /** スマホの人の行き先。CMCUBE はパソコン専用なので、ここで取りこぼさない
         （2026-08-10、「製品どうしは直リンクしない」約束を見直した） */
     phoneNote: string;
     /** 行き先が無いときは省ける。ストア審査中など、リンクを出すと
@@ -104,6 +109,9 @@ export const content: Record<Lang, SiteContent> = {
       buyLabel: '無料でダウンロード',
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
       startedNote: 'ダウンロードしています。そのままお待ちください（208MB）。',
+      buyLabelMac: 'Mac 版をダウンロード',
+      buyHrefMac: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-mac.dmg',
+      startedNoteMac: 'ダウンロードしています。そのままお待ちください（377MB）。開いたら CMCUBE をアプリケーションフォルダへドラッグしてください。',
       openTitle: '青い画面が出たときの開きかた',
       openSteps: [
         'ダウンロードしたファイルをダブルクリックします',
@@ -111,8 +119,8 @@ export const content: Record<Lang, SiteContent> = {
         '下に出てくる「実行」を押します',
       ],
       openNote: 'このお知らせは、アプリに開発元の証明書を付けていないために出るものです。中身に問題があるという意味ではありません。証明書は年間の費用がかかるため、まだ付けていません。',
-      requirement: 'Windows 10 / 11 専用のアプリです。スマートフォン・Mac ではご利用いただけません。',
-      // tinyCUBE は App Store で公開済み。CMCUBE は Windows 専用なので、
+      requirement: 'Windows 10 / 11 と macOS（Intel・Apple Silicon）のアプリです。スマートフォンではご利用いただけません。',
+      // tinyCUBE は App Store で公開済み。CMCUBE はパソコン専用なので、
       // スマホで来た人をここで渡す。
       // ⚠️ URLに国コード（/jp/）を入れないこと。海外の人が開くと
       //    「国が違う」という警告が出て、そこで止まってしまう
@@ -216,7 +224,7 @@ export const content: Record<Lang, SiteContent> = {
         { label: '支払時期', value: '無料のため、お支払いは発生しません。' },
         { label: '引渡時期', value: 'ダウンロードボタンを押すと、ただちにダウンロードが始まります。' },
         { label: '返品・キャンセル', value: '無料のため、返品・返金は発生しません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
-        { label: '動作環境', value: 'Windows 10 / 11（64bit）。Windows 11 の「スマート アプリ コントロール」が有効な環境では、署名のないアプリとして起動が拒否されます（警告は表示されません）。該当する場合は Microsoft ストア版の公開をお待ちください。' },
+        { label: '動作環境', value: 'Windows 10 / 11（64bit）および macOS（Intel / Apple Silicon）。Windows 11 の「スマート アプリ コントロール」が有効な環境では、署名のないアプリとして起動が拒否されます（警告は表示されません）。該当する場合は Microsoft ストア版の公開をお待ちください。' },
       ],
     },
     footer: '© 2026 CUBICENGINEstudio. All rights reserved.',
@@ -248,6 +256,9 @@ export const content: Record<Lang, SiteContent> = {
       //    あったが、ファイルを直接渡すなら1つで足りる
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
       startedNote: 'Downloading. Please wait (208MB).',
+      buyLabelMac: 'Download for Mac',
+      buyHrefMac: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-mac.dmg',
+      startedNoteMac: 'Downloading. Please wait (377MB). When it opens, drag CMCUBE into your Applications folder.',
       openTitle: 'If you see a blue warning screen',
       openSteps: [
         'Double-click the downloaded file',
@@ -255,7 +266,7 @@ export const content: Record<Lang, SiteContent> = {
         'Click "Run anyway"',
       ],
       openNote: 'This notice appears because the app is not code-signed. It does not mean anything is wrong with the app. Signing certificates carry a yearly cost, so we have not purchased one yet.',
-      requirement: 'Windows 10 / 11 only. This app does not run on smartphones or Mac.',
+      requirement: 'For Windows 10 / 11 and macOS (Intel and Apple Silicon). This app does not run on smartphones.',
       // ⚠️ 日本語版と同じ理由で「free」と言い切らない（¥300 の買い切りがある）
       // ⚠️ 理由は ja 側のコメント参照
       phoneNote: 'On a phone? tinyCUBE lays your voice and effects over a video you already shot, in one take. Now available on the App Store!',

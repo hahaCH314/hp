@@ -144,6 +144,12 @@ header {
   margin: 0 auto 40px auto;
 }
 
+.buy-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .buy-btn {
   display: inline-block;
   background: linear-gradient(135deg, #3b82f6, var(--primary-pink));
