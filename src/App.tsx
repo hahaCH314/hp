@@ -19,7 +19,7 @@ function App({ lang }: { lang: Lang }) {
    * ⚠️ **ボタンは止めないこと。** 落ちてこなかった人が
    *    もう一度押せなくなる。押せるまま、知らせだけ出す
    */
-  const [started, setStarted] = useState(false);
+  const [started, setStarted] = useState<'win' | 'mac' | null>(null);
 
   /**
    * ⚠️ **進み具合（何％）は出せない。**（2026-08-23、伊波さん
@@ -148,10 +148,24 @@ function App({ lang }: { lang: Lang }) {
               ファイルには効かず、ブラウザによっては**リンクごと無効になる**
               （2026-08-23、伊波さん「まだできなかった」「ダウンロード」）。
               GitHub 側が filename を指定して返すので、付けなくても保存される */}
-          <a href={t.hero.buyHref} className="buy-btn" onClick={() => setStarted(true)}>
-            {t.hero.buyLabel}
-          </a>
-          {started && (
+          {/* ⚠️ **Windows と Mac で分ける**（2026-09-02）。Mac 版が出るまでは
+              ボタンが1つで、押した人は必ず Windows の .exe を掴んだ。
+              「Mac対応」と書いてボタンが exe だけだと、そこで行き止まりになる */}
+          <div className="buy-row">
+            <a href={t.hero.buyHref} className="buy-btn" onClick={() => setStarted('win')}>
+              {t.hero.buyLabel}
+            </a>
+            <a href={t.hero.buyHrefMac} className="buy-btn" onClick={() => setStarted('mac')}>
+              {t.hero.buyLabelMac}
+            </a>
+          </div>
+          {/* ⚠️ **Mac には「開きかた」を出さない。** 公証(notarize)を通してあるので
+              ダブルクリックで普通に開く。警告の話をすると、かえって不安にさせる
+              （2026-09-02 に Developer ID の証明書を取得し、公証も通した） */}
+          {started === 'mac' && (
+            <p className="dl-started">{t.hero.startedNoteMac}</p>
+          )}
+          {started === 'win' && (
             <>
               <p className="dl-started">{t.hero.startedNote}</p>
               {/* ⚠️ **開き方を必ず出すこと**（2026-08-27、伊波さん
