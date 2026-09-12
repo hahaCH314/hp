@@ -197,16 +197,6 @@ header {
   box-shadow: 0 8px 20px rgba(88, 101, 242, 0.6);
 }
 
-/* アプリ内課金の注記。ボタン直下にわかりやすく表示 */
-.hero .hero-iap-note {
-  margin-top: 12px;
-  margin-bottom: 4px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #ffd166;
-  letter-spacing: 0.5px;
-}
-
 /* 動作環境。購入ボタンの真下に出す。
    ⚠️ .hero p の詳細度が単一クラスより高いので、必ず .hero を前に付ける
    （付けないと font-size がヒーローの本文サイズに戻される） */

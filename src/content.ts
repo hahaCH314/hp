@@ -18,8 +18,6 @@ type SiteContent = {
     line2: string;
     lead: string[];
     buyLabel: string;
-    /** アプリ内課金（追加フレームなど）の案内表示 */
-    inAppPurchaseNote: string;
     /**
      * ダウンロードボタンのリンク先。
      *
@@ -115,9 +113,9 @@ export const content: Record<Lang, SiteContent> = {
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
         '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
-      // 2026-09-12 お試し無料3種＋追加フレーム¥300のアプリ内課金モデルを導入
+      // 2026-08-24 時点、CMCUBE に有料のものは無い。
+      // ⚠️ 有料の要素を足したときは、ここと特商法の価格欄を必ず一緒に直すこと
       buyLabel: '無料でダウンロード',
-      inAppPurchaseNote: '※無料ダウンロード（一部アプリ内課金あり：追加フレーム ¥300）',
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
       startedNote: 'ダウンロードしています。そのままお待ちください（208MB）。',
       buyLabelMac: 'Mac 版をダウンロード',
@@ -226,14 +224,15 @@ export const content: Record<Lang, SiteContent> = {
 
         // ⚠️ **無料でも特商法の記載は残すこと。** 事業者の連絡先や引渡時期は
         //    有償・無償にかかわらず求められる。
-        // 2026-09-12 アプリ内課金（追加フレームアンロック ¥300）導入に伴い更新。
-        // 法定の表示なので実態とずれてはいけない
-        { label: '販売価格', value: '本体無料（一部アプリ内課金あり：追加フレーム ¥300）' },
+        // 2026-08-24 時点、CMCUBE に有料のものは無い。
+        // ⚠️ 有料の要素を足したときは、この4行（販売価格・支払方法・支払時期・
+        //    返品）を必ず一緒に直すこと。法定の表示なので実態とずれてはいけない
+        { label: '販売価格', value: '無料' },
         { label: '商品代金以外の必要料金', value: 'インターネット接続に必要な通信料等はお客様のご負担となります。' },
-        { label: '支払方法', value: '本体：無料 / 追加フレーム：PayPal決済（各種クレジットカード、デビットカード等対応）' },
-        { label: '支払時期', value: '追加フレームご購入時（PayPal決済完了時）に即時' },
-        { label: '引渡時期', value: '本体：ダウンロードボタン押下後ただちにダウンロードが始まります。 / 追加フレーム：決済完了後、アプリ内で即時に全フレームがアンロックされます。' },
-        { label: '返品・キャンセル', value: 'デジタルコンテンツの性質上、購入完了後の返品・返金・キャンセルはお受けできません。無料のお試しフレーム等で動作をご確認の上ご購入ください。不具合等の場合は上記メールアドレスまでご連絡ください。' },
+        { label: '支払方法', value: '無料のため、お支払いは発生しません。' },
+        { label: '支払時期', value: '無料のため、お支払いは発生しません。' },
+        { label: '引渡時期', value: 'ダウンロードボタンを押すと、ただちにダウンロードが始まります。' },
+        { label: '返品・キャンセル', value: '無料のため、返品・返金は発生しません。動作しない等の不具合がある場合は上記メールアドレスまでご連絡ください。' },
         { label: '動作環境', value: 'Windows 10 / 11（64bit）および macOS（Intel / Apple Silicon）。Windows 11 の「スマート アプリ コントロール」が有効な環境では、署名のないアプリとして起動が拒否されます（警告は表示されません）。該当する場合は Microsoft ストア版の公開をお待ちください。' },
       ],
     },
@@ -300,7 +299,6 @@ export const content: Record<Lang, SiteContent> = {
         'This studio makes the perfect live video ad a reality.',
       ],
       buyLabel: 'Download Free',
-      inAppPurchaseNote: '※ Free Download (In-app purchase available: Additional Frames ¥300)',
       // ⚠️ **日本語版と同じ直リンクにした**（2026-08-23）。
       //    前は Ko-fi の商品ページへ飛ばしていたが、無料にしたので
       //    売り場を経由する理由がなくなった。売り場は言語で分ける必要が

@@ -159,7 +159,6 @@ function App({ lang }: { lang: Lang }) {
               {t.hero.buyLabelMac}
             </a>
           </div>
-          <p className="hero-iap-note">{t.hero.inAppPurchaseNote}</p>
           {/* ⚠️ **Mac には「開きかた」を出さない。** 公証(notarize)を通してあるので
               ダブルクリックで普通に開く。警告の話をすると、かえって不安にさせる
               （2026-09-02 に Developer ID の証明書を取得し、公証も通した） */}
