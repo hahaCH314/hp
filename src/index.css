@@ -337,6 +337,12 @@ footer {
 .footer-social-sep {
   color: #444;
 }
+.privacy-updated {
+  margin: 0 0 24px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 /* 特商法ページから製品ページに戻る導線 */
 .tokushoho-back {
   margin-top: 24px;

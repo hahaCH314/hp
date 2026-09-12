@@ -77,6 +77,15 @@ type SiteContent = {
     rest: string;
     rows: { label: string; value: string }[];
   };
+  // プライバシーポリシー。App Store / Mac App Store が掲載を必須にしている。
+  // 特商法と違って日本固有の制度ではないので ja / en 両方が持つ（optional にしない）
+  privacy: {
+    accent: string;
+    rest: string;
+    updated: string;
+    sections: { title: string; body: string }[];
+    backLabel: string;
+  };
   footer: string;
 };
 
@@ -227,6 +236,46 @@ export const content: Record<Lang, SiteContent> = {
         { label: '動作環境', value: 'Windows 10 / 11（64bit）および macOS（Intel / Apple Silicon）。Windows 11 の「スマート アプリ コントロール」が有効な環境では、署名のないアプリとして起動が拒否されます（警告は表示されません）。該当する場合は Microsoft ストア版の公開をお待ちください。' },
       ],
     },
+    privacy: {
+      accent: 'プライバシー',
+      rest: 'ポリシー',
+      updated: '最終更新日: 2026年9月12日',
+      sections: [
+        {
+          title: '収集する情報',
+          body: 'CMCUBE はアカウント登録を必要とせず、氏名・メールアドレス・生年月日などの個人情報を収集しません。',
+        },
+        {
+          title: 'カメラとマイク',
+          body: '顔ハメ演出やアバター表示のためにカメラを、実況音声の収録のためにマイクを使用します。これらの映像と音声はお使いのパソコンの中だけで処理され、外部のサーバーへ送信されることはありません。',
+        },
+        {
+          title: '録画したデータ',
+          body: '録画した動画はお使いのパソコンの中に保存されます（macOS は ~/Movies/CMCUBE、Windows はビデオフォルダ）。CUBICENGINEstudio がその内容を取得したり閲覧したりすることはありません。',
+        },
+        {
+          title: '通信',
+          body: '新しい版が公開されていないかを確かめるため、起動時に当サイトの version.json を読み込みます。この通信で送信する個人情報はありません。ただし一般的なウェブサーバーと同じく、接続元の IP アドレスなどがアクセスログに記録される場合があります。',
+        },
+        {
+          title: 'アクセス解析と広告',
+          body: 'アクセス解析ツール、広告、行動追跡の仕組みはいずれも組み込んでいません。',
+        },
+        {
+          title: '第三者への提供',
+          body: '上記のとおり個人情報を収集していないため、第三者へ提供する情報はありません。',
+        },
+        {
+          title: 'お問い合わせ',
+          body: '本ポリシーに関するお問い合わせは cubicenginestudio@icloud.com までご連絡ください。',
+        },
+        {
+          title: '改定',
+          body: '本ポリシーを変更した場合は、このページに掲載します。',
+        },
+      ],
+      backLabel: '← {product} のページに戻る',
+    },
     footer: '© 2026 CUBICENGINEstudio. All rights reserved.',
   },
 
@@ -328,6 +377,46 @@ export const content: Record<Lang, SiteContent> = {
           body: 'CMCUBE records your screen as it is. Anything visible in a captured window — chats, email, notifications, names — ends up in the video, and a video once published cannot be taken back. Do not record screens containing other people’s personal information. For game footage, video, music, images and other material owned by third parties, follow each rights holder’s terms when deciding whether you may use it. Get consent from anyone you film or record. Using CMCUBE to demean people or to mislead is strictly prohibited.',
         },
       ],
+    },
+    privacy: {
+      accent: 'Privacy',
+      rest: ' Policy',
+      updated: 'Last updated: September 12, 2026',
+      sections: [
+        {
+          title: 'Information we collect',
+          body: 'CMCUBE does not require an account and does not collect personal information such as your name, email address, or date of birth.',
+        },
+        {
+          title: 'Camera and microphone',
+          body: 'The camera is used for face-cutout effects and avatar overlays, and the microphone for recording your commentary. This video and audio is processed entirely on your own computer and is never sent to any server.',
+        },
+        {
+          title: 'Your recordings',
+          body: 'Recorded videos are saved on your own computer (~/Movies/CMCUBE on macOS, the Videos folder on Windows). CUBICENGINEstudio never receives or views their contents.',
+        },
+        {
+          title: 'Network access',
+          body: 'On launch, the app reads version.json from this site to check whether a newer release is available. No personal information is sent with this request. As with any web server, the connecting IP address may appear in standard access logs.',
+        },
+        {
+          title: 'Analytics and advertising',
+          body: 'The app contains no analytics, advertising, or behavioural tracking of any kind.',
+        },
+        {
+          title: 'Sharing with third parties',
+          body: 'Because no personal information is collected, there is nothing to share with third parties.',
+        },
+        {
+          title: 'Contact',
+          body: 'For questions about this policy, please write to cubicenginestudio@icloud.com.',
+        },
+        {
+          title: 'Changes',
+          body: 'Any change to this policy will be posted on this page.',
+        },
+      ],
+      backLabel: '← Back to the {product} page',
     },
     footer: '© 2026 CUBICENGINEstudio. All rights reserved.',
   },

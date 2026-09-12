@@ -255,6 +255,12 @@ function App({ lang }: { lang: Lang }) {
             </a>
           </>
         )}
+        {' '}
+        {/* プライバシーポリシー。ストアが掲載URLの登録を必須にしていて、
+            404 だと審査に通らない。ja / en で行き先が変わる */}
+        <a href={lang === 'en' ? '/en/privacy/' : '/privacy/'} className="footer-link">
+          {t.privacy.accent}{t.privacy.rest}
+        </a>
         {/* SNSはURLも表示名も言語で変わらないので content.ts には置かない。
             共有リンクに付く ?igsh= や ?_t= は追跡用パラメータなので外してある */}
         <div className="footer-social">
