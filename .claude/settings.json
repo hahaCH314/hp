@@ -6,7 +6,11 @@
       "Bash(npm install *)",
       "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\).on\\('end',\\(\\)=>{const a=JSON.parse\\(s\\);for\\(const[k,v]of Object.entries\\(a.vulnerabilities\\)\\){console.log\\('###',k,'|',v.severity,'| dev依存:',v.isDirect?'直接':'間接'\\);\\(v.via||[]\\).forEach\\(x=>{if\\(typeof x==='object'\\)console.log\\('   -',x.title,'\\\\n     ',x.url\\)}\\)}}\\)\")",
       "Bash(rm -f peek_*.png)",
-      "Bash(\"/c/Program Files/Blender Foundation/Blender 4.5/blender.exe\" --background --python cmcube_3d_burst_orbit_blender.py --python peek.py)"
+      "Bash(\"/c/Program Files/Blender Foundation/Blender 4.5/blender.exe\" --background --python cmcube_3d_burst_orbit_blender.py --python peek.py)",
+      "Bash([ -f \"$f\" ])",
+      "Bash(ls -la E:/syunp_data/Downloads/ロゴ.mp4)",
+      "Bash(echo \"見つかりません\")",
+      "Bash(ls \"E:/syunp_data/Downloads/\")"
     ]
   }
 }
