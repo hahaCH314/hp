@@ -88,6 +88,20 @@ type SiteContent = {
     sections: { title: string; body: string }[];
     backLabel: string;
   };
+  // サポートページ。App Store は「利用者が質問・支援を求められるページ」への
+  // URL 登録を必須にしていて、製品紹介だけのトップを出すと審査で弾かれる
+  // （2026-09-28、Guideline 1.5 で実際に指摘された）
+  support: {
+    accent: string;
+    rest: string;
+    lead: string;
+    contactTitle: string;
+    contactBody: string;
+    email: string;
+    faqTitle: string;
+    faq: { q: string; a: string }[];
+    backLabel: string;
+  };
   footer: string;
 };
 
@@ -277,6 +291,38 @@ export const content: Record<Lang, SiteContent> = {
       ],
       backLabel: '← {product} のページに戻る',
     },
+    support: {
+      accent: 'サポート',
+      rest: '',
+      lead: 'CMCUBE の使い方や不具合について、いつでもお問い合わせください。開発者が直接お答えします。',
+      contactTitle: 'お問い合わせ',
+      contactBody: 'ご質問・ご要望・不具合のご報告は、下のメールアドレスまでお送りください。通常2〜3営業日以内に返信します。不具合の場合は、お使いの OS（Windows / macOS とそのバージョン）と、どの操作で起きたかを書き添えていただけると調査が早くなります。',
+      email: 'cubicenginestudio@icloud.com',
+      faqTitle: 'よくあるご質問',
+      faq: [
+        {
+          q: '取り込みたいアプリが一覧に出てきません',
+          a: 'macOS では「画面収録」の許可が必要です。システム設定 → プライバシーとセキュリティ → 画面収録 で CMCUBE を許可し、アプリを再起動してください。また、排他フルスクリーンのゲームは一覧に出ません。ゲーム側の設定をボーダーレスウィンドウに変えるか、「画面ぜんぶ」を選んでください。',
+        },
+        {
+          q: '録画した動画はどこに保存されますか',
+          a: 'macOS では ~/Movies/CMCUBE、Windows ではビデオフォルダの CMCUBE に保存されます。録画を止めると自動で保存され、フォルダが開きます。',
+        },
+        {
+          q: 'ゲームを操作しながらテロップを出せません',
+          a: '録画中は Ctrl + Alt + 設定したキー で操作してください。CMCUBE が後ろに隠れていても反応します。割り当ては 設定 → ショートカット で確認・変更できます。',
+        },
+        {
+          q: '追加フレームを買ったのに反映されません',
+          a: 'Mac App Store 版では、設定 → 動画用のフレームを選ぶ から「購入を復元」を押してください。直接ダウンロード版（PayPal でご購入の場合）は、購入した端末でのみ有効になります。解決しない場合はご購入日時を添えてご連絡ください。',
+        },
+        {
+          q: '動作環境を教えてください',
+          a: 'Windows 10 / 11（64bit）と macOS（Intel / Apple Silicon）に対応しています。スマートフォンには対応していません。',
+        },
+      ],
+      backLabel: '← {product} のページに戻る',
+    },
     footer: '© 2026 CUBICENGINEstudio. All rights reserved.',
   },
 
@@ -416,6 +462,38 @@ export const content: Record<Lang, SiteContent> = {
         {
           title: 'Changes',
           body: 'Any change to this policy will be posted on this page.',
+        },
+      ],
+      backLabel: '← Back to the {product} page',
+    },
+    support: {
+      accent: 'Support',
+      rest: '',
+      lead: 'Questions about CMCUBE, or something not working? Get in touch any time and the developer will reply.',
+      contactTitle: 'Contact us',
+      contactBody: 'Send questions, requests and bug reports to the address below. We normally reply within two to three business days. For bugs, telling us your OS (Windows or macOS, and the version) and what you were doing helps us a lot.',
+      email: 'cubicenginestudio@icloud.com',
+      faqTitle: 'Frequently asked questions',
+      faq: [
+        {
+          q: 'The app I want to capture is not in the list',
+          a: 'macOS requires Screen Recording permission. Open System Settings > Privacy & Security > Screen Recording, allow CMCUBE, then restart the app. Games running in exclusive full screen never appear in the list; switch the game to borderless window, or pick "Whole screen" instead.',
+        },
+        {
+          q: 'Where are my recordings saved?',
+          a: 'To ~/Movies/CMCUBE on macOS, and to CMCUBE in your Videos folder on Windows. The file is saved as soon as you stop recording, and the folder opens automatically.',
+        },
+        {
+          q: 'Captions do not fire while I am playing a game',
+          a: 'While recording, use Ctrl + Alt + your assigned key. These work even when CMCUBE is behind the game. You can review and change the assignments under Settings > Shortcuts.',
+        },
+        {
+          q: 'I bought the extra frames but they are still locked',
+          a: 'On the Mac App Store version, open Settings > Frames and press Restore Purchases. On the direct download version (bought through PayPal), the unlock applies to the computer you bought it on. If that does not help, write to us with the date of purchase.',
+        },
+        {
+          q: 'What are the system requirements?',
+          a: 'Windows 10 / 11 (64-bit) and macOS (Intel and Apple Silicon). Phones are not supported.',
         },
       ],
       backLabel: '← Back to the {product} page',

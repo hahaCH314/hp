@@ -347,6 +347,31 @@ footer {
 .footer-social-sep {
   color: #444;
 }
+.support-lead {
+  margin: 0 0 28px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.support-heading {
+  margin: 28px 0 10px;
+  font-size: 1rem;
+  color: var(--accent-color);
+}
+.support-body {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+.support-email {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+.support-email a {
+  color: var(--accent-2);
+}
+
 .privacy-updated {
   margin: 0 0 24px;
   font-size: 0.85rem;

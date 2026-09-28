@@ -17,6 +17,8 @@ export default defineConfig({
         tokushoho: resolve(import.meta.dirname, 'tokushoho/index.html'),
         privacy: resolve(import.meta.dirname, 'privacy/index.html'),
         enPrivacy: resolve(import.meta.dirname, 'en/privacy/index.html'),
+        support: resolve(import.meta.dirname, 'support/index.html'),
+        enSupport: resolve(import.meta.dirname, 'en/support/index.html'),
       },
     },
   },

@@ -259,6 +259,12 @@ function App({ lang }: { lang: Lang }) {
         {' '}
         {/* プライバシーポリシー。ストアが掲載URLの登録を必須にしていて、
             404 だと審査に通らない。ja / en で行き先が変わる */}
+        {/* サポート。App Store のサポートURLがここを指している。
+            消すと審査の要件（Guideline 1.5）を満たせなくなる */}
+        <a href={lang === 'en' ? '/en/support/' : '/support/'} className="footer-link">
+          {t.support.accent}{t.support.rest}
+        </a>
+        {' '}
         <a href={lang === 'en' ? '/en/privacy/' : '/privacy/'} className="footer-link">
           {t.privacy.accent}{t.privacy.rest}
         </a>
