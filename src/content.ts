@@ -309,6 +309,10 @@ export const content: Record<Lang, SiteContent> = {
           a: 'macOS では ~/Movies/CMCUBE、Windows ではビデオフォルダの CMCUBE に保存されます。録画を止めると自動で保存され、フォルダが開きます。',
         },
         {
+          q: '録画に音が入りません（Mac）',
+          a: 'macOS 版では、アプリ自身が鳴らす音（効果音・BGM）とマイクは録音されますが、取り込んだゲームやアプリの音は録音されません。macOS では他のアプリの音を取り込む仕組みをアプリ側から使えないためです。ゲーム音も残したい場合は Windows 版をお使いください。なお 1.1.9 では効果音と BGM も入らない不具合がありました。1.2.0 で直っています。',
+        },
+        {
           q: 'ゲームを操作しながらテロップを出せません',
           a: '録画中は Ctrl + Alt + 設定したキー で操作してください。CMCUBE が後ろに隠れていても反応します。割り当ては 設定 → ショートカット で確認・変更できます。',
         },
@@ -482,6 +486,10 @@ export const content: Record<Lang, SiteContent> = {
         {
           q: 'Where are my recordings saved?',
           a: 'To ~/Movies/CMCUBE on macOS, and to CMCUBE in your Videos folder on Windows. The file is saved as soon as you stop recording, and the folder opens automatically.',
+        },
+        {
+          q: 'My recording has no sound (Mac)',
+          a: 'On macOS, sounds the app itself plays (sound effects and background music) and your microphone are recorded, but audio from the app or game you capture is not. macOS does not let an app capture another app\'s audio through the interface we use. If you need the game audio in the file, use the Windows version. Note that in 1.1.9 the sound effects and music were missing too; that is fixed in 1.2.0.',
         },
         {
           q: 'Captions do not fire while I am playing a game',
