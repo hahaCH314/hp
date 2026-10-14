@@ -58,10 +58,13 @@ type SiteContent = {
         （2026-08-10、「製品どうしは直リンクしない」約束を見直した） */
     phoneNote: string;
     /** 行き先が無いときは省ける。ストア審査中など、リンクを出すと
-        押した人が行き止まりになる期間に使う。
-        Google Play はまだ公開待ちなので、また使う場面がある */
+        押した人が行き止まりになる期間に使う。 */
     phoneLabel?: string;
     phoneHref?: string;
+    /** Google Play 側。2026-10-14 公開（パッケージ名 com.cubicenginestudio.tinycube.app）。
+        片方だけ出すと「もう一方のストアは無い」ように見えるので、出すときは2本とも出す */
+    phoneLabel2?: string;
+    phoneHref2?: string;
   };
   features: {
     accent: string;
@@ -145,13 +148,16 @@ export const content: Record<Lang, SiteContent> = {
       ],
       openNote: 'このお知らせは、アプリに開発元の証明書を付けていないために出るものです。中身に問題があるという意味ではありません。証明書は年間の費用がかかるため、まだ付けていません。',
       requirement: 'Windows 10 / 11 と macOS（Intel・Apple Silicon）のアプリです。スマートフォンではご利用いただけません。',
-      // tinyCUBE は App Store で公開済み。CMCUBE はパソコン専用なので、
-      // スマホで来た人をここで渡す。
+      // tinyCUBE は App Store・Google Play 両方で公開済み（2026-10-14、Google Play は
+      // パッケージ名 com.cubicenginestudio.tinycube.app で上げ直した版）。
+      // CMCUBE はパソコン専用なので、スマホで来た人をここで渡す。
       // ⚠️ URLに国コード（/jp/）を入れないこと。海外の人が開くと
       //    「国が違う」という警告が出て、そこで止まってしまう
-      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せるスマホ用アプリ tinyCUBE が App Store で公開されました！',
+      phoneNote: 'スマホの方へ。撮ってある動画に声とエフェクトを一発撮りで乗せるスマホ用アプリ tinyCUBE が App Store・Google Play 両方で公開されました！',
       phoneLabel: 'App Store で見る',
       phoneHref: 'https://apps.apple.com/app/id6803792204',
+      phoneLabel2: 'Google Play で見る',
+      phoneHref2: 'https://play.google.com/store/apps/details?id=com.cubicenginestudio.tinycube.app',
     },
     features: {
       accent: 'CORE',
@@ -370,9 +376,11 @@ export const content: Record<Lang, SiteContent> = {
       requirement: 'For Windows 10 / 11 and macOS (Intel and Apple Silicon). This app does not run on smartphones.',
       // ⚠️ 日本語版と同じ理由で「free」と言い切らない（¥300 の買い切りがある）
       // ⚠️ 理由は ja 側のコメント参照
-      phoneNote: 'On a phone? tinyCUBE lays your voice and effects over a video you already shot, in one take. Now available on the App Store!',
+      phoneNote: 'On a phone? tinyCUBE lays your voice and effects over a video you already shot, in one take. Now available on the App Store and Google Play!',
       phoneLabel: 'View on App Store',
       phoneHref: 'https://apps.apple.com/app/id6803792204',
+      phoneLabel2: 'View on Google Play',
+      phoneHref2: 'https://play.google.com/store/apps/details?id=com.cubicenginestudio.tinycube.app',
     },
     features: {
       accent: 'CORE',

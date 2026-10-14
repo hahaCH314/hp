@@ -202,6 +202,12 @@ function App({ lang }: { lang: Lang }) {
                 <a href={t.hero.phoneHref} target="_blank" rel="noopener noreferrer">{t.hero.phoneLabel} →</a>
               </>
             )}
+            {t.hero.phoneHref2 && (
+              <>
+                {' '}
+                <a href={t.hero.phoneHref2} target="_blank" rel="noopener noreferrer">{t.hero.phoneLabel2} →</a>
+              </>
+            )}
           </p>
 
           <div style={{ marginTop: '24px' }}>
