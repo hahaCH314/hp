@@ -261,7 +261,7 @@ export const content: Record<Lang, SiteContent> = {
     privacy: {
       accent: 'プライバシー',
       rest: 'ポリシー',
-      updated: '最終更新日: 2026年9月12日',
+      updated: '最終更新日: 2026年10月18日',
       sections: [
         {
           title: '収集する情報',
@@ -269,7 +269,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: 'カメラとマイク',
-          body: '顔ハメ演出やアバター表示のためにカメラを、実況音声の収録のためにマイクを使用します。これらの映像と音声はお使いのパソコンの中だけで処理され、外部のサーバーへ送信されることはありません。',
+          body: 'CMCUBE は、現在の画面ではカメラもマイクも使いません。カメラやマイクを使う機能を提供する場合も、映像と音声はお使いのパソコンの中だけで処理され、外部のサーバーへ送信されることはありません。',
         },
         {
           title: '録画したデータ',
@@ -442,7 +442,7 @@ export const content: Record<Lang, SiteContent> = {
     privacy: {
       accent: 'Privacy',
       rest: ' Policy',
-      updated: 'Last updated: September 12, 2026',
+      updated: 'Last updated: October 18, 2026',
       sections: [
         {
           title: 'Information we collect',
@@ -450,7 +450,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: 'Camera and microphone',
-          body: 'The camera is used for face-cutout effects and avatar overlays, and the microphone for recording your commentary. This video and audio is processed entirely on your own computer and is never sent to any server.',
+          body: 'CMCUBE does not use the camera or the microphone in its current screens. If a feature that uses them is offered, the video and audio are processed entirely on your own computer and are never sent to any server.',
         },
         {
           title: 'Your recordings',
