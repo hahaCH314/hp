@@ -320,11 +320,11 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           q: 'ゲームを操作しながらテロップを出せません',
-          a: '録画中は Ctrl + Alt + 設定したキー で操作してください。CMCUBE が後ろに隠れていても反応します。割り当ては 設定 → ショートカット で確認・変更できます。',
+          a: 'バージョン 1.3.0 から、録画中に押す操作は要りません。録画前に「出す文字」を入れておくと、録画の長さに合わせて自動で出ます。ゲームの画面をクリックして遊ぶだけです。',
         },
         {
           q: '追加フレームを買ったのに反映されません',
-          a: 'Mac App Store 版では、設定 → 動画用のフレームを選ぶ から「購入を復元」を押してください。直接ダウンロード版（PayPal でご購入の場合）は、購入した端末でのみ有効になります。解決しない場合はご購入日時を添えてご連絡ください。',
+          a: 'Mac App Store 版では、右の「② フレームを選ぶ」で鍵マーク（🔒）の付いたフレームを押し、出てくる画面の「購入を復元」を押してください。直接ダウンロード版（PayPal でご購入の場合）は、購入した端末でのみ有効になります。解決しない場合はご購入日時を添えてご連絡ください。',
         },
         {
           q: '動作環境を教えてください',
@@ -501,11 +501,11 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           q: 'Captions do not fire while I am playing a game',
-          a: 'While recording, use Ctrl + Alt + your assigned key. These work even when CMCUBE is behind the game. You can review and change the assignments under Settings > Shortcuts.',
+          a: 'From version 1.3.0 you do not press anything while recording. Type your captions before you start and they appear automatically, spaced across the length of the clip. Just click your game and play.',
         },
         {
           q: 'I bought the extra frames but they are still locked',
-          a: 'On the Mac App Store version, open Settings > Frames and press Restore Purchases. On the direct download version (bought through PayPal), the unlock applies to the computer you bought it on. If that does not help, write to us with the date of purchase.',
+          a: 'On the Mac App Store version, in "② Pick a frame" press a frame with a lock icon (🔒), then press Restore Purchases on the screen that opens. On the direct download version (bought through PayPal), the unlock applies to the computer you bought it on. If that does not help, write to us with the date of purchase.',
         },
         {
           q: 'What are the system requirements?',
