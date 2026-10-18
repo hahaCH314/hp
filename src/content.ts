@@ -120,26 +120,27 @@ export const content: Record<Lang, SiteContent> = {
       productName: 'CMCUBE',
       tagline: 'あなたも一発撮りに挑戦してみない？',
       // ⚠️ この一行は製品への約束であって、キャッチコピーではない。
-      // 2026-08-09 時点で、字幕を他所で付けた利用者がいた。つまりまだ完全には
-      // 守れていない。弱めるのではなく、守れる製品にする方針を選んだ（伊波さんの判断）。
-      // 字幕と切り出しを CMCUBE の中で完結させるまで、ここは「先に出した約束」。
-      // 実装が追いつくまでの間、この文言を根拠に強く売り込みすぎないこと。
+      // 2026-08-09 時点では、字幕を他所で付けた利用者がいて、まだ守れていなかった。
+      // 弱めるのではなく、守れる製品にする方針を選んだ（伊波さんの判断）。
+      // 1.3.0（2026-10-18）で、文字を録画前に入れておけば自動で出て、時間が来たら自動で
+      // 止まる作りにした。これでようやく約束の中身が実装に追いついた。
+      // 文字の中身を録画中に差し替えることはできない（そこは「録画前に決める」）。
       line1: 'あとから編集無し！！！',
       line2: '録画のみの圧倒的ライブ感',
       lead: [
-        '起動して2クリック、もう録れる。シーンもソースも組まない。',
-        'ゲームを遊んでいる手を止めずに、テロップもVFXも叩き込める。',
+        '画面を選んで、文字を入れて、スタート。むずかしい設定はありません。',
+        '文字は自動で出て、時間が来たら自動で止まる。録画中に押すものは何もない。',
+        '手持ちの動画にも、フレームと文字をそのまま重ねられる。',
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
-        '「完璧なライブ動画CM」を、このスタジオが実現する。',
       ],
       // 2026-09-12 お試し無料3種＋追加フレーム¥300のアプリ内課金モデルを導入
       buyLabel: '無料でダウンロード',
       inAppPurchaseNote: '※無料ダウンロード（一部アプリ内課金あり：追加フレーム ¥300）',
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
-      startedNote: 'ダウンロードしています。そのままお待ちください（208MB）。',
+      startedNote: 'ダウンロードしています。そのままお待ちください（325MB）。',
       buyLabelMac: 'Mac 版をダウンロード',
       buyHrefMac: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-mac.dmg',
-      startedNoteMac: 'ダウンロードしています。そのままお待ちください（377MB）。開いたら CMCUBE をアプリケーションフォルダへドラッグしてください。',
+      startedNoteMac: 'ダウンロードしています。そのままお待ちください（446MB）。開いたら CMCUBE をアプリケーションフォルダへドラッグしてください。',
       openTitle: '青い画面が出たときの開きかた',
       openSteps: [
         'ダウンロードしたファイルをダブルクリックします',
@@ -164,20 +165,20 @@ export const content: Record<Lang, SiteContent> = {
       rest: ' FEATURES',
       items: [
         {
-          title: '🎨 17種のプレミアム配信テーマ',
-          body: '高品質な背景アートと、それを引き立てる「静かな環境アニメーション」をセットにした17種のテーマを収録。1クリックで配信画面をプレミアムな空間に変えます。',
+          title: '🖼 フレームは横53種・縦36種',
+          body: '横長（16:9）と、TikTok・YouTubeショート・リール向けの縦長（9:16）のフレームを収録。絵を選ぶだけで、画面が一気にCMらしくなります。動く演出つきのものが横縦あわせて30種。無料で使えるのは3種、残りは追加フレーム（¥300）で全部使えます。',
         },
         {
-          title: '🎹 拡張サウンドボード',
-          body: 'BGMから5つの効果音まで、あなたの好きな音源をロード可能。キーボードのショートカットで、ライブ中に即座に音を出せます。',
+          title: '🔠 文字は自動で出る',
+          body: 'ゴールドの派手な文字を最大3つ。「はじめ・なか・おわり」に入れておくと、録画の長さに合わせて自動でポンと飛び出します。「うおおおお！！」「神ゲー」など、押すだけで入るひと言も用意しました。',
         },
         {
-          title: '🔠 ド派手なテロップ演出',
-          body: 'ゴールド、ネオン、ホラーなど5種のテキストスタイルと、飛び出し・スライドなどのアニメーションを瞬時に発動。',
+          title: '🎮 遊ぶだけ。押す操作はゼロ',
+          body: 'ゲームやアプリは別ウィンドウのまま取り込めます。録画を始めたら、ゲームの画面をクリックして遊ぶだけ。文字が自動で入り、15秒たつと自動で止まって保存されます。実況の撮影が、ひとりで完結します。',
         },
         {
-          title: '🎮 遊びながら、演出する',
-          body: 'ゲームやアプリは別ウィンドウのまま取り込めます。CMCUBEにフォーカスが無くてもショートカットキーでテロップ・効果音・VFXが発動するので、プレイする手を止めずに演出を重ねられます。実況の撮影が、ひとりで完結します。',
+          title: '🎥 手持ちの動画もそのまま',
+          body: 'スマホやゲーム機で撮った動画ファイルも読み込めます。動画が頭から流れ、フレームと文字を重ねて、同じ長さ（最長30秒）で書き出します。',
         },
         {
           title: '🎬 出力はMP4。そのまま投稿',
@@ -191,7 +192,7 @@ export const content: Record<Lang, SiteContent> = {
           title: '🎓 子供の安全な配信体験に',
           // 実際には配信せず録画するだけなので「しているような」を必ず残す。
           // 英語版の "simulated" と対になっている
-          body: '子供たちも遊びながら、ライブ配信しているような体験が安全にできる。PCの使い方（ショートカット機能覚えるなど）にも慣れ親御さんも嬉しい',
+          body: '子供たちも遊びながら、ライブ配信しているような体験が安全にできる。操作は3つだけなので、パソコンに慣れていなくても大丈夫。親御さんも安心',
         },
       ],
     },
@@ -350,10 +351,10 @@ export const content: Record<Lang, SiteContent> = {
       line1: 'NO POST-EDITING!!!',
       line2: 'Just record. Pure live energy.',
       lead: [
-        'Two clicks from launch and you are rolling. No scenes, no sources to wire up.',
-        'Fire captions and VFX without taking your hands off the game.',
+        'Pick your screen, type your words, press Start. No complicated settings.',
+        'Captions appear on their own and recording stops on its own. Nothing to press while you record.',
+        'Already have a clip? Lay a frame and captions straight over it.',
         'Stop recording and an MP4 is waiting. No conversion, no editing.',
-        'This studio makes the perfect live video ad a reality.',
       ],
       buyLabel: 'Download Free',
       inAppPurchaseNote: '※ Free Download (In-app purchase available: Additional Frames ¥300)',
@@ -362,10 +363,10 @@ export const content: Record<Lang, SiteContent> = {
       //    売り場を経由する理由がなくなった。売り場は言語で分ける必要が
       //    あったが、ファイルを直接渡すなら1つで足りる
       buyHref: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-Setup.exe',
-      startedNote: 'Downloading. Please wait (208MB).',
+      startedNote: 'Downloading. Please wait (325MB).',
       buyLabelMac: 'Download for Mac',
       buyHrefMac: 'https://github.com/hahaCH314/cmcube-download/releases/latest/download/CMCUBE-mac.dmg',
-      startedNoteMac: 'Downloading. Please wait (377MB). When it opens, drag CMCUBE into your Applications folder.',
+      startedNoteMac: 'Downloading. Please wait (446MB). When it opens, drag CMCUBE into your Applications folder.',
       openTitle: 'If you see a blue warning screen',
       openSteps: [
         'Double-click the downloaded file',
@@ -387,20 +388,20 @@ export const content: Record<Lang, SiteContent> = {
       rest: ' FEATURES',
       items: [
         {
-          title: '🎨 17 Premium Themes',
-          body: 'Pre-loaded with 17 stunning themes featuring high-quality background art paired with subtle, ambient animations. Switch the entire look of your stream with a single click.',
+          title: '🖼 53 Landscape and 36 Portrait Frames',
+          body: 'Frames for landscape (16:9) and for vertical video (9:16) on TikTok, YouTube Shorts and Reels. Just pick a picture and your screen instantly looks like an ad. 30 of them come with animated effects. 3 are free; the rest all unlock with the additional frames pack (¥300).',
         },
         {
-          title: '🎹 Expandable Soundboard',
-          body: 'Load your own background music and up to five sound effects. Fire them instantly mid-stream with keyboard shortcuts.',
+          title: '🔠 Captions That Appear By Themselves',
+          body: 'Up to three bold gold captions. Put them in "start / middle / end" and they pop in on their own, spaced across the length of your clip. One-tap phrases like "LET\'S GO!!" are ready to drop in.',
         },
         {
-          title: '🔠 Bold Caption Effects',
-          body: 'Five text styles including Gold, Neon and Horror, with pop-in, slide and other animations triggered on the spot.',
+          title: '🎮 Just Play. Nothing to Press.',
+          body: 'Capture your game or app from its own window. Once recording starts, click your game and play. Captions appear automatically, and after 15 seconds it stops and saves by itself. One person, one take.',
         },
         {
-          title: '🎮 Play and Produce at Once',
-          body: 'Capture your game or app from its own window. Keyboard shortcuts fire captions, sounds and VFX even when CMCUBE is not the focused window — so you never take your hands off the game. One person, one take.',
+          title: '🎥 Use a Clip You Already Have',
+          body: 'Load a video shot on your phone or console. It plays from the start, with a frame and captions laid over it, and is saved at the same length (up to 30 seconds).',
         },
         {
           title: '🎬 MP4 Out, Ready to Post',
@@ -412,7 +413,7 @@ export const content: Record<Lang, SiteContent> = {
         },
         {
           title: '🎓 Safe Streaming for Kids',
-          body: 'Kids can enjoy a safe, simulated live streaming experience while playing. It’s a fun way to learn PC basics like keyboard shortcuts, giving parents peace of mind!',
+          body: 'Kids can enjoy a safe, simulated live streaming experience while playing. There are only three things to do, so no PC experience is needed, giving parents peace of mind!',
         },
       ],
     },
