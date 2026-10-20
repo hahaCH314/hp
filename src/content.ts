@@ -165,8 +165,8 @@ export const content: Record<Lang, SiteContent> = {
       rest: ' FEATURES',
       items: [
         {
-          title: '🖼 フレームは横53種・縦36種',
-          body: '横長（16:9）と、TikTok・YouTubeショート・リール向けの縦長（9:16）のフレームを収録。絵を選ぶだけで、画面が一気にCMらしくなります。動く演出つきのものが横縦あわせて30種。無料で使えるのは3種、残りは追加フレーム（¥300）で全部使えます。',
+          title: '🖼 フレームは横51種・縦15種',
+          body: '横長（16:9）と、TikTok・YouTubeショート・リール向けの縦長（9:16）のフレームを収録。絵を選ぶだけで、画面が一気にCMらしくなります。縦の15種と横の13種は、絵に合わせて動く演出つき。無料で使えるのは3種、残りは追加フレーム（¥300）で全部使えます。',
         },
         {
           title: '🔠 文字は自動で出る',
@@ -388,8 +388,8 @@ export const content: Record<Lang, SiteContent> = {
       rest: ' FEATURES',
       items: [
         {
-          title: '🖼 53 Landscape and 36 Portrait Frames',
-          body: 'Frames for landscape (16:9) and for vertical video (9:16) on TikTok, YouTube Shorts and Reels. Just pick a picture and your screen instantly looks like an ad. 30 of them come with animated effects. 3 are free; the rest all unlock with the additional frames pack (¥300).',
+          title: '🖼 51 Landscape and 15 Portrait Frames',
+          body: 'Frames for landscape (16:9) and for vertical video (9:16) on TikTok, YouTube Shorts and Reels. Just pick a picture and your screen instantly looks like an ad. All 15 portrait frames and 13 landscape ones come with effects animated to match the art. 3 are free; the rest all unlock with the additional frames pack (¥300).',
         },
         {
           title: '🔠 Captions That Appear By Themselves',
