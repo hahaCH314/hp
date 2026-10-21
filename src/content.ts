@@ -65,6 +65,12 @@ type SiteContent = {
         片方だけ出すと「もう一方のストアは無い」ように見えるので、出すときは2本とも出す */
     phoneLabel2?: string;
     phoneHref2?: string;
+    /** Mac App Store 版（2026-10-22 に 1.3.3 が審査通過、id6811258789）。
+        dmg の直ダウンロードは残し、ストアは「こちらからも」の案内にとどめる。
+        ストア版の追加フレームは Apple の App 内課金、直ダウンロード版は PayPal で別々 */
+    macStoreNote: string;
+    macStoreLabel: string;
+    macStoreHref: string;
   };
   features: {
     accent: string;
@@ -159,6 +165,9 @@ export const content: Record<Lang, SiteContent> = {
       phoneHref: 'https://apps.apple.com/app/id6803792204',
       phoneLabel2: 'Google Play で見る',
       phoneHref2: 'https://play.google.com/store/apps/details?id=com.cubicenginestudio.tinycube.app',
+      macStoreNote: 'Mac は App Store からも入れられます。',
+      macStoreLabel: 'Mac App Store で見る',
+      macStoreHref: 'https://apps.apple.com/app/id6811258789',
     },
     features: {
       accent: 'CORE',
@@ -382,6 +391,9 @@ export const content: Record<Lang, SiteContent> = {
       phoneHref: 'https://apps.apple.com/app/id6803792204',
       phoneLabel2: 'View on Google Play',
       phoneHref2: 'https://play.google.com/store/apps/details?id=com.cubicenginestudio.tinycube.app',
+      macStoreNote: 'On a Mac, you can also get it from the App Store.',
+      macStoreLabel: 'View on the Mac App Store',
+      macStoreHref: 'https://apps.apple.com/app/id6811258789',
     },
     features: {
       accent: 'CORE',

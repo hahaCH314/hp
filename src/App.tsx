@@ -160,6 +160,12 @@ function App({ lang }: { lang: Lang }) {
             </a>
           </div>
           <p className="hero-iap-note">{t.hero.inAppPurchaseNote}</p>
+          {/* Mac App Store 版（2026-10-22 審査通過）。ボタンにはせず、dmg の下に添える。
+              ボタンを3つ並べると、Mac の人がどちらを押せばいいか迷う */}
+          <p className="hero-phone">
+            {t.hero.macStoreNote}{' '}
+            <a href={t.hero.macStoreHref} target="_blank" rel="noopener noreferrer">{t.hero.macStoreLabel} →</a>
+          </p>
           {/* ⚠️ **Mac には「開きかた」を出さない。** 公証(notarize)を通してあるので
               ダブルクリックで普通に開く。警告の話をすると、かえって不安にさせる
               （2026-09-02 に Developer ID の証明書を取得し、公証も通した） */}
