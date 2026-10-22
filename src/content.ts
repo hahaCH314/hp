@@ -130,12 +130,13 @@ export const content: Record<Lang, SiteContent> = {
       // 弱めるのではなく、守れる製品にする方針を選んだ（伊波さんの判断）。
       // 1.3.0（2026-10-18）で、文字を録画前に入れておけば自動で出て、時間が来たら自動で
       // 止まる作りにした。これでようやく約束の中身が実装に追いついた。
+      // 1.3.4（2026-10-22）で、時間で勝手に止めるのはやめた。利用者が「止めて保存」を押すまで録る。
       // 文字の中身を録画中に差し替えることはできない（そこは「録画前に決める」）。
       line1: 'あとから編集無し！！！',
       line2: '録画のみの圧倒的ライブ感',
       lead: [
         '画面を選んで、文字を入れて、スタート。むずかしい設定はありません。',
-        '文字は自動で出て、時間が来たら自動で止まる。録画中に押すものは何もない。',
+        '文字は自動で出る。録画中に押すのは、終わるときの「止めて保存」だけ。',
         '手持ちの動画にも、フレームと文字をそのまま重ねられる。',
         '止めた瞬間、MP4 が出る。変換も編集もいらない。',
       ],
@@ -174,20 +175,20 @@ export const content: Record<Lang, SiteContent> = {
       rest: ' FEATURES',
       items: [
         {
-          title: '🖼 フレームは横51種・縦15種',
-          body: '横長（16:9）と、TikTok・YouTubeショート・リール向けの縦長（9:16）のフレームを収録。絵を選ぶだけで、画面が一気にCMらしくなります。縦の15種と横の13種は、絵に合わせて動く演出つき。無料で使えるのは3種、残りは追加フレーム（¥300）で全部使えます。',
+          title: '🖼 フレームは横53種・縦15種',
+          body: '横長（16:9）と、TikTok・YouTubeショート・リール向けの縦長（9:16）のフレームを収録。絵を選ぶだけで、画面が一気にCMらしくなります。縦の15種と横の15種は、絵に合わせて動く演出つき。無料で使えるのは3種、残りは追加フレーム（¥300）で全部使えます。',
         },
         {
           title: '🔠 文字は自動で出る',
-          body: 'ゴールドの派手な文字を最大3つ。「はじめ・なか・おわり」に入れておくと、録画の長さに合わせて自動でポンと飛び出します。「うおおおお！！」「神ゲー」など、押すだけで入るひと言も用意しました。',
+          body: 'ゴールドの派手な文字を最大3つ。「はじめ・なか・おわり」に入れておくと、録画の始まり・途中・止めるときに自動でポンと飛び出します。「うおおおお！！」「神ゲー」など、押すだけで入るひと言も用意しました。',
         },
         {
-          title: '🎮 遊ぶだけ。押す操作はゼロ',
-          body: 'ゲームやアプリは別ウィンドウのまま取り込めます。録画を始めたら、ゲームの画面をクリックして遊ぶだけ。文字が自動で入り、15秒たつと自動で止まって保存されます。実況の撮影が、ひとりで完結します。',
+          title: '🎮 遊んで、止めるだけ',
+          body: 'ゲームやアプリは別ウィンドウのまま取り込めます。録画を始めたら、ゲームの画面をクリックして遊ぶだけ。文字が自動で入り、「止めて保存」を押すまで長さの上限なく録れます。実況の撮影が、ひとりで完結します。',
         },
         {
           title: '🎥 手持ちの動画もそのまま',
-          body: 'スマホやゲーム機で撮った動画ファイルも読み込めます。動画が頭から流れ、フレームと文字を重ねて、同じ長さ（最長30秒）で書き出します。',
+          body: 'スマホやゲーム機で撮った動画ファイルも読み込めます。動画が頭から流れ、フレームと文字を重ねて書き出します。長さの上限はありません。',
         },
         {
           title: '🎬 出力はMP4。そのまま投稿',
@@ -361,7 +362,7 @@ export const content: Record<Lang, SiteContent> = {
       line2: 'Just record. Pure live energy.',
       lead: [
         'Pick your screen, type your words, press Start. No complicated settings.',
-        'Captions appear on their own and recording stops on its own. Nothing to press while you record.',
+        'Captions appear on their own. The only thing to press is "Stop & save" when you are done.',
         'Already have a clip? Lay a frame and captions straight over it.',
         'Stop recording and an MP4 is waiting. No conversion, no editing.',
       ],
@@ -400,20 +401,20 @@ export const content: Record<Lang, SiteContent> = {
       rest: ' FEATURES',
       items: [
         {
-          title: '🖼 51 Landscape and 15 Portrait Frames',
-          body: 'Frames for landscape (16:9) and for vertical video (9:16) on TikTok, YouTube Shorts and Reels. Just pick a picture and your screen instantly looks like an ad. All 15 portrait frames and 13 landscape ones come with effects animated to match the art. 3 are free; the rest all unlock with the additional frames pack (¥300).',
+          title: '🖼 53 Landscape and 15 Portrait Frames',
+          body: 'Frames for landscape (16:9) and for vertical video (9:16) on TikTok, YouTube Shorts and Reels. Just pick a picture and your screen instantly looks like an ad. All 15 portrait frames and 15 landscape ones come with effects animated to match the art. 3 are free; the rest all unlock with the additional frames pack (¥300).',
         },
         {
           title: '🔠 Captions That Appear By Themselves',
-          body: 'Up to three bold gold captions. Put them in "start / middle / end" and they pop in on their own, spaced across the length of your clip. One-tap phrases like "LET\'S GO!!" are ready to drop in.',
+          body: 'Up to three bold gold captions. Put them in "start / middle / end" and they pop in on their own at the start, partway through, and when you stop. One-tap phrases like "LET\'S GO!!" are ready to drop in.',
         },
         {
-          title: '🎮 Just Play. Nothing to Press.',
-          body: 'Capture your game or app from its own window. Once recording starts, click your game and play. Captions appear automatically, and after 15 seconds it stops and saves by itself. One person, one take.',
+          title: '🎮 Just Play, Then Stop',
+          body: 'Capture your game or app from its own window. Once recording starts, click your game and play. Captions appear automatically, and it keeps recording, with no length limit, until you press "Stop & save". One person, one take.',
         },
         {
           title: '🎥 Use a Clip You Already Have',
-          body: 'Load a video shot on your phone or console. It plays from the start, with a frame and captions laid over it, and is saved at the same length (up to 30 seconds).',
+          body: 'Load a video shot on your phone or console. It plays from the start, with a frame and captions laid over it. There is no length limit.',
         },
         {
           title: '🎬 MP4 Out, Ready to Post',
